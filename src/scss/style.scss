@@ -1,0 +1,132 @@
+@import "./base/nule.scss";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+.container {
+    width: 85%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.main {
+    font-family: 'Roboto', sans-serif;
+    &__holder {
+    }
+    &__title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 32px;
+        font-weight: 700;
+        border-radius: 0px 4px;
+        background-color: #90ecff;
+        color: black;
+        box-shadow: 0px 0px 0px rgb(155, 155, 155);
+        padding: 40px 0px;
+        margin-bottom: 30px;
+        transition: all 0.2s linear;
+        &:hover {
+            font-size: 38px;
+            background-color: #70e9ff;
+            box-shadow: 0px 3px 10px rgb(175, 175, 175);
+        }
+    }
+    &__info {
+    }
+    &__input {
+        width: 100%;
+        font-size: 24px;
+        border: #90ecff 2px solid;
+        border-radius: 3px;
+        padding: 10px;
+        margin-bottom: 30px;
+    }
+    &__city {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: max-content;
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 36px;
+        font-weight: 500;
+        border: #0000007e 1px solid;
+        border-radius: 3px;
+        padding: 3px 8px;
+        margin: 0 auto;
+        margin-bottom: 50px;
+    }
+    &__cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__card {
+        width: 100%;
+        min-width: 200px;
+        max-width: 275px;
+        height: 400px;
+        background-color: #ebebeb;
+        border: #9c9c9c 1px solid;
+        border-radius: 3px;
+        box-shadow: 0px 0px 0px #9c9c9c;
+        padding: 30px;
+        margin: 0px 10px 10px 0px;
+        transform: scale(1);
+        transition: all 0.2s linear;
+        &:hover {
+            background-color: #fff;
+            box-shadow: 0px 0px 15px #9c9c9c;
+            transform: scale(1.025);
+        }
+    }
+}
+
+
+.card {
+    &__day,
+    &__img,
+    &__celsia,
+    &__weather-info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 22px;
+    }
+
+    &__day {
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 32px;
+        font-weight: 400;
+        margin-bottom: 15px;
+    }
+    &__img {
+        font-size: 140px;
+        color: rgb(0, 89, 255);
+        margin: 0 auto;
+        margin-bottom: 15px;
+    }
+    &__celsia {
+        font-size: 26px;
+        margin-bottom: 15px;
+    }
+    &__subinfo {
+        font-size: 16px;
+        margin-bottom: 3px;
+    }
+    &__weather-button {
+        width: 100%;
+        background-color: #375cff;
+        color: #fff;
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 18px;
+        font-weight: 400;
+        border-radius: 2px;
+        padding: 10px 13px;
+        transition: all 0.2s linear;
+        &:hover {
+            background-color: #002fff;
+        }
+    }
+}
