@@ -1,0 +1,21 @@
+.list {
+    &__change {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        label {
+            input {
+                margin-right: 5px;
+            }
+        }
+    }
+    &__select {
+        cursor: pointer;
+        width: min-content;
+        min-width: 70px;
+        max-width: 150px;
+        font-size: 18px;
+        margin-right: 20px;
+    }
+}

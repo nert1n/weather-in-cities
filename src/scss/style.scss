@@ -8,33 +8,10 @@
     margin: 0 auto;
 }
 
-.main {
-    font-family: 'Roboto', sans-serif;
-    &__holder {
-    }
-    &__title {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-family: 'Ubuntu', sans-serif;
-        font-size: 32px;
-        font-weight: 700;
-        border-radius: 0px 4px;
-        background-color: #90ecff;
-        color: black;
-        box-shadow: 0px 0px 0px rgb(155, 155, 155);
-        padding: 40px 0px;
-        margin-bottom: 30px;
-        transition: all 0.2s linear;
-        &:hover {
-            font-size: 38px;
-            background-color: #70e9ff;
-            box-shadow: 0px 3px 10px rgb(175, 175, 175);
-        }
-    }
-    &__info {
-    }
+.list {
     &__input {
+        display: flex;
+        height: 50px;
         width: 100%;
         font-size: 24px;
         border: #90ecff 2px solid;
@@ -42,6 +19,54 @@
         padding: 10px;
         margin-bottom: 30px;
     }
+    &__input-enter {
+        height: 0;
+        font-size: 0;
+        border: #90edff00 0 solid;
+        border-radius: 0;
+        opacity: 0;
+        padding: 0;
+        margin: 0;
+    }
+    &__input-enter-active {
+        display: flex;
+        height: 50px;
+        width: 100%;
+        font-size: 24px;
+        border: #90ecff 2px solid;
+        border-radius: 3px;
+        padding: 10px;
+        margin-bottom: 30px;
+        opacity: 1;
+    }
+    &__input-exit {
+        display: flex;
+        height: 50px;
+        width: 100%;
+        font-size: 24px;
+        border: #90ecff 2px solid;
+        border-radius: 3px;
+        padding: 10px;
+        margin-bottom: 30px;
+        opacity: 1;
+    }
+    &__input-enter-active {
+        transition: all 300ms ease-in;
+    }
+    &__input-exit-active {
+        height: 0;
+        font-size: 0;
+        border: #90edff00 0 solid;
+        border-radius: 0;
+        opacity: 0;
+        padding: 0;
+        margin: 0;
+        transition: all 250ms ease-in;
+    }
+}
+
+.main {
+    font-family: 'Roboto', sans-serif;
     &__city {
         display: flex;
         justify-content: center;
@@ -61,72 +86,5 @@
         flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
-    }
-    &__card {
-        width: 100%;
-        min-width: 200px;
-        max-width: 275px;
-        height: 400px;
-        background-color: #ebebeb;
-        border: #9c9c9c 1px solid;
-        border-radius: 3px;
-        box-shadow: 0px 0px 0px #9c9c9c;
-        padding: 30px;
-        margin: 0px 10px 10px 0px;
-        transform: scale(1);
-        transition: all 0.2s linear;
-        &:hover {
-            background-color: #fff;
-            box-shadow: 0px 0px 15px #9c9c9c;
-            transform: scale(1.025);
-        }
-    }
-}
-
-
-.card {
-    &__day,
-    &__img,
-    &__celsia,
-    &__weather-info {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 22px;
-    }
-
-    &__day {
-        font-family: 'Ubuntu', sans-serif;
-        font-size: 32px;
-        font-weight: 400;
-        margin-bottom: 15px;
-    }
-    &__img {
-        font-size: 140px;
-        color: rgb(0, 89, 255);
-        margin: 0 auto;
-        margin-bottom: 15px;
-    }
-    &__celsia {
-        font-size: 26px;
-        margin-bottom: 15px;
-    }
-    &__subinfo {
-        font-size: 16px;
-        margin-bottom: 3px;
-    }
-    &__weather-button {
-        width: 100%;
-        background-color: #375cff;
-        color: #fff;
-        font-family: 'Ubuntu', sans-serif;
-        font-size: 18px;
-        font-weight: 400;
-        border-radius: 2px;
-        padding: 10px 13px;
-        transition: all 0.2s linear;
-        &:hover {
-            background-color: #002fff;
-        }
     }
 }
