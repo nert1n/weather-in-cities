@@ -1,21 +1,42 @@
 .header {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 32px;
-    font-weight: 700;
-    border-radius: 0px 4px;
     background-color: #90ecff;
-    color: black;
-    box-shadow: 0px 0px 0px rgb(155, 155, 155);
-    padding: 40px 0px;
+    border-radius: 0px 0px 4px 4px;
     margin-bottom: 30px;
-    
     transition: all 0.2s linear;
     &:hover {
-        font-size: 38px;
         background-color: #70e9ff;
         box-shadow: 0px 3px 10px rgb(175, 175, 175);
+    }
+    &__holder {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: 'Ubuntu', sans-serif;
+        color: black;
+        box-shadow: 0px 0px 0px rgb(155, 155, 155);
+        padding: 10px 0px;
+    }
+    &__title {
+        display: flex;
+        align-items: center;
+        font-size: 32px;
+        font-weight: 700;
+        color: rgb(0, 81, 255);
+        transition: all 0.2s linear;
+        &:hover {
+            font-size: 38px;
+        }
+    }
+    &__auth {
+        font-size: 20px;
+        color: rgb(0, 81, 255);
+        &:first-child {
+            margin-right: 20px;
+        }
+    }
+    &__profile {
+        font-size: 20px;
+        color: rgb(0, 81, 255);
     }
 }

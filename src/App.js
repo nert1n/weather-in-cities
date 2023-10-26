@@ -1,28 +1,23 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './scss/style.scss'
-import { routes } from "./router";
+import { publicRoutes } from "./router";
 import Header from './components/UI/Header/Header';
 import Footer from './components/UI/Footer/Footer';
+import { createContext } from 'react';
+import AppRouter from './components/AppRouter';
+
+export const ConfigContext = createContext();
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-        <Header/>
-
-        <Routes>
-        {routes.map((route) => (
-          <Route
-            key={route.path}
-            path={route.path}
-            element={<route.component />}
-            exact={route.exact}
-          />
-        ))}
-        </Routes>
-        
-        <Footer/>
-      </BrowserRouter>
+        <BrowserRouter>
+          <Header/>
+          
+          <AppRouter/>
+          
+          <Footer/>
+        </BrowserRouter>
     </div>
   );
 }

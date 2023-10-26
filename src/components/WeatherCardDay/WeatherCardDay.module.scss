@@ -1,0 +1,19 @@
+.card {
+    border: rgba(0, 0, 0, 0.75) 1px solid;
+    border-radius: 5px;
+    padding: 10px;
+    &__img {
+        font-size: 50px;
+        color: rgb(0, 89, 255);
+        border-bottom: rgba(0, 0, 0, 0.5) 1px solid;
+        margin: 0 auto;
+        margin-bottom: 15px;
+    }
+    &__time {
+        font-size: 22px;
+        font-weight: 400;
+    }
+    &__temp {
+        font-size: 20px;
+    }
+}

@@ -2,23 +2,16 @@ import React, { useRef, useState } from 'react'
 import ToggleSwitch from '../UI/ToggleSwitch/ToggleSwitch';
 import { CSSTransition } from 'react-transition-group';
 import cl from './WeatherList.module.scss'
+import { useSelector, useDispatch } from 'react-redux';
+import { syncState } from '../../redux/slices/citySlice';
 
 export default function WeatherList(props) {
+    const city = useSelector((state) => state.city.value);
+    const dispatch = useDispatch()
     const weatherList = [
         {
             country: 'Украина',
-            city: ['Киев', 'Черкассы', 'Донетск'],
-            cityEng: ['Kiev', 'Cherkasy', 'Donetsk'],
-        },
-        {
-            country: 'Россия',
-            city: ['Москва'],
-            cityEng: ['Moscow'],
-        },
-        {
-            country: 'Америка',
-            city: ['Нью Йорк', 'Лос Анджелес'],
-            cityEng: ['New York', 'Los Angeles'],
+            city: ['Киев', 'Черкассы', 'Днепр'],
         },
     ];
 
@@ -30,7 +23,7 @@ export default function WeatherList(props) {
     };
 
     const handleCityChange = (e) => {
-        props.updateCity(e.target.value);
+        dispatch(syncState(e.target.value))
     };
 
     return (
@@ -39,13 +32,13 @@ export default function WeatherList(props) {
                 <select
                     className={cl.list__select}
                     name="selectCity"
-                    defaultValue="Kiev"
+                    defaultValue={city}
                     onChange={handleCityChange}
                 >
                     {weatherList.map((el, index) => (
                         <optgroup label={el.country} key={index}>
                         {el.city.map((city, cityIndex) => (
-                            <option value={el.cityEng[cityIndex]} key={cityIndex}>
+                            <option value={el.city[cityIndex]} key={cityIndex}>
                                 {city}
                             </option>
                         ))}

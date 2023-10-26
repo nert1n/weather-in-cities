@@ -1,0 +1,14 @@
+.day {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    &__holder {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
