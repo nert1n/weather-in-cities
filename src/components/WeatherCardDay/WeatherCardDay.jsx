@@ -2,9 +2,9 @@ import React from 'react'
 import cl from './WeatherCardDay.module.scss'
 
 export default function WeatherCardDay(props) {
-    const seconds = `${props.weatherInfo.dt}`
+    const seconds = props.weatherInfo.dt - 7200
     const ms = seconds * 1000
-
+    
     const date = new Date(ms)
     const time = date.getHours();
     

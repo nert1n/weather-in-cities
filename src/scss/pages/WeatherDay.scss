@@ -1,14 +1,22 @@
 .day {
-    font-family: 'Roboto', sans-serif;
-    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+    font-family: 'Inter', sans-serif;
+    color: #1C1C1C;
+    font-size: 32px;
+    margin: 0 auto;
     &__holder {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        margin-top: 50px;
     }
     p {
         display: flex;
         justify-content: center;
         align-items: center;
+        margin-bottom: 10px;
     }
 }

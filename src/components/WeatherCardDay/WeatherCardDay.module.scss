@@ -1,19 +1,26 @@
 .card {
-    border: rgba(0, 0, 0, 0.75) 1px solid;
-    border-radius: 5px;
+    font-family: 'Inter', sans-serif;
+    width: 125px;
+    height: 180px;
+    background-color: #A7B6CD;
+    color: #1C1C1C;
+    border-radius: 10px;
     padding: 10px;
+    &:not(:last-child) {
+        margin-right: 25px;
+    }
     &__img {
-        font-size: 50px;
-        color: rgb(0, 89, 255);
-        border-bottom: rgba(0, 0, 0, 0.5) 1px solid;
-        margin: 0 auto;
-        margin-bottom: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 85px;
+        color: #74EEFF;
+        margin: 10px auto 0 auto;
     }
     &__time {
-        font-size: 22px;
-        font-weight: 400;
+        font-size: 24px;
     }
     &__temp {
-        font-size: 20px;
+        font-size: 28px;
     }
 }

@@ -1,42 +1,51 @@
 .header {
     display: flex;
-    background-color: #90ecff;
-    border-radius: 0px 0px 4px 4px;
-    margin-bottom: 30px;
-    transition: all 0.2s linear;
-    &:hover {
-        background-color: #70e9ff;
-        box-shadow: 0px 3px 10px rgb(175, 175, 175);
-    }
+    height: 120px;
+    background-color: #5F6A7B;
+    box-shadow: 0px 3px 10px rgb(175, 175, 175);
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 50px;
     &__holder {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        font-family: 'Ubuntu', sans-serif;
-        color: black;
+        font-size: 20px;
         box-shadow: 0px 0px 0px rgb(155, 155, 155);
         padding: 10px 0px;
     }
     &__title {
         display: flex;
         align-items: center;
+        color: white;
         font-size: 32px;
-        font-weight: 700;
-        color: rgb(0, 81, 255);
         transition: all 0.2s linear;
-        &:hover {
-            font-size: 38px;
+        i {
+            color: #74EEFF;
+            margin-right: 10px;
         }
+    }
+    &__nav {
+        display: flex;
+        align-items: center;
+    }
+    &__select {
+        background-color: #9dabbe;
+        color: white;
+        border: #00000000 0px solid;
+        border-radius: 5px;
+        padding: 5px 8px;
+        margin-left: 50px;
+    }
+    &__theme {
+        background-color: #ffffff00;
+        color: white;
+        font-size: 20px;
+        margin-left: 50px;
     }
     &__auth {
-        font-size: 20px;
-        color: rgb(0, 81, 255);
-        &:first-child {
-            margin-right: 20px;
+        color: white;
+        &:last-child {
+            margin-left: 20px;
         }
-    }
-    &__profile {
-        font-size: 20px;
-        color: rgb(0, 81, 255);
     }
 }

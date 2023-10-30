@@ -1,6 +1,4 @@
 import React, { useRef, useState } from 'react'
-import ToggleSwitch from '../UI/ToggleSwitch/ToggleSwitch';
-import { CSSTransition } from 'react-transition-group';
 import cl from './WeatherList.module.scss'
 import { useSelector, useDispatch } from 'react-redux';
 import { syncState } from '../../redux/slices/citySlice';
@@ -14,13 +12,8 @@ export default function WeatherList(props) {
             city: ['Киев', 'Черкассы', 'Днепр'],
         },
     ];
-
-    const [isOn, setIsOn] = useState(false);
+    
     const nodeRef = useRef(null);
-
-    const updateIsOn = (newIsOn) => {
-        setIsOn(newIsOn);
-    };
 
     const handleCityChange = (e) => {
         dispatch(syncState(e.target.value))
@@ -28,41 +21,30 @@ export default function WeatherList(props) {
 
     return (
         <div className={cl.list}>
-            <div className={cl.list__change}>
-                <select
-                    className={cl.list__select}
-                    name="selectCity"
-                    defaultValue={city}
-                    onChange={handleCityChange}
-                >
-                    {weatherList.map((el, index) => (
-                        <optgroup label={el.country} key={index}>
-                        {el.city.map((city, cityIndex) => (
-                            <option value={el.city[cityIndex]} key={cityIndex}>
-                                {city}
-                            </option>
-                        ))}
-                        </optgroup>
-                    ))}
-                </select>
-                <ToggleSwitch updateIsOn={updateIsOn}/>
-            </div>
-            <CSSTransition
-                in={isOn}
-                timeout={300}
-                classNames='list__input'
-                nodeRef={nodeRef}
-                unmountOnExit
+            <input
+                className={cl.list__input}
+                type="text"
+                name="first_name"
+                ref={nodeRef}
+                value={props.city}
+                onChange={handleCityChange}
+            />
+            <select
+                className={cl.list__select}
+                name="selectCity"
+                defaultValue={city}
+                onChange={handleCityChange}
             >
-                <input
-                    className={`list__input ${isOn ? 'none' : ''}`}
-                    type="text"
-                    name="first_name"
-                    ref={nodeRef}
-                    value={props.city}
-                    onChange={handleCityChange}
-                />
-            </CSSTransition>
+                {weatherList.map((el, index) => (
+                    <optgroup label={el.country} key={index}>
+                    {el.city.map((city, cityIndex) => (
+                        <option value={el.city[cityIndex]} key={cityIndex}>
+                            {city}
+                        </option>
+                    ))}
+                    </optgroup>
+                ))}
+            </select>
         </div>
     )
 }

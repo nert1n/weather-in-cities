@@ -1,21 +1,27 @@
 .list {
-    &__change {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    color: #1C1C1C;
+    margin-bottom: 60px;
+    &__input {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 20px;
-        label {
-            input {
-                margin-right: 5px;
-            }
-        }
+        height: 50px;
+        width: 25%;
+        font-size: 24px;
+        background-color: #D9E0EB;
+        border-radius: 5px;
+        padding: 10px;
     }
     &__select {
         cursor: pointer;
-        width: min-content;
-        min-width: 70px;
-        max-width: 150px;
-        font-size: 18px;
-        margin-right: 20px;
+        display: flex;
+        align-items: center;
+        height: 50px;
+        border-radius: 5px;
+        background-color: #D9E0EB;
+        font-size: 24px;
+        padding: 10px;
     }
 }

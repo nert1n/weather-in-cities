@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { isTrue } from '../../redux/slices/authSlice';
+import { Link } from 'react-router-dom';
 
 export default function Register() {
   const isAuth = useSelector((state) => state.auth.value);
@@ -10,8 +11,22 @@ export default function Register() {
   };
 
   return (
-    <div>
-      <button onClick={handleCityChange}>Register</button>
-    </div>
+    <main className='auth'>
+      <div className='container'>
+        <div className='auth__holder'>
+          <form className='auth__form'>
+            <input className='auth__input' type="login" placeholder="Login"/>
+            <input className='auth__input' type="email" placeholder="Email"/>
+            <input className='auth__input' type="password" placeholder="Password"/>
+            <input className='auth__input' type="password" placeholder="Agree password"/>
+            <Link className='auth__button' onClick={handleCityChange} to='/'>Register</Link>
+          </form>
+          <div className='auth__help'>
+            <Link to='/forgot-password'></Link>
+            <Link to='/login'>I have an account</Link>
+          </div>
+        </div>
+      </div>
+    </main>
   )
 }

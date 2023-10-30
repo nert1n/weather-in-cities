@@ -1,92 +1,36 @@
 @import "./base/nule.scss";
 @import "./pages/WeatherDay.scss";
+@import "./pages/Auth.scss";
+@import "./pages/Profile.scss";
 @import "./icons/icons/owfont-regular.css";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
 .container {
     width: 85%;
-    max-width: 1440px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-.list {
-    &__input {
-        display: flex;
-        height: 50px;
-        width: 100%;
-        font-size: 24px;
-        border: #90ecff 2px solid;
-        border-radius: 3px;
-        padding: 10px;
-        margin-bottom: 30px;
-    }
-    &__input-enter {
-        height: 0;
-        font-size: 0;
-        border: #90edff00 0 solid;
-        border-radius: 0;
-        opacity: 0;
-        padding: 0;
-        margin: 0;
-    }
-    &__input-enter-active {
-        display: flex;
-        height: 50px;
-        width: 100%;
-        font-size: 24px;
-        border: #90ecff 2px solid;
-        border-radius: 3px;
-        padding: 10px;
-        margin-bottom: 30px;
-        opacity: 1;
-    }
-    &__input-exit {
-        display: flex;
-        height: 50px;
-        width: 100%;
-        font-size: 24px;
-        border: #90ecff 2px solid;
-        border-radius: 3px;
-        padding: 10px;
-        margin-bottom: 30px;
-        opacity: 1;
-    }
-    &__input-enter-active {
-        transition: all 300ms ease-in;
-    }
-    &__input-exit-active {
-        height: 0;
-        font-size: 0;
-        border: #90edff00 0 solid;
-        border-radius: 0;
-        opacity: 0;
-        padding: 0;
-        margin: 0;
-        transition: all 250ms ease-in;
-    }
+.content {
+    font-family: 'Inter', sans-serif;
+    min-height: calc(100vh - 370px);
 }
 
 .main {
-    font-family: 'Roboto', sans-serif;
+    color: #1C1C1C;
     &__city {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: max-content;
-        font-family: 'Ubuntu', sans-serif;
-        font-size: 36px;
-        font-weight: 500;
-        border: #0000007e 1px solid;
-        border-radius: 3px;
-        padding: 3px 8px;
+        font-size: 32px;
         margin: 0 auto;
         margin-bottom: 50px;
     }
     &__cards {
         display: flex;
-        flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
+        padding: 0 20px;
     }
 }

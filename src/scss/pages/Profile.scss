@@ -1,0 +1,25 @@
+.profile {
+    &__holder {
+        
+    }
+    &__title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 32px;
+    }
+    &__img {
+        width: 200px;
+        height: 500px;
+    }
+    &__exit {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        background-color: #adadad;
+        color: red;
+        padding: 20px 0;
+        margin-top: 20px;
+    }
+}

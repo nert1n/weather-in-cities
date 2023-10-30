@@ -11,16 +11,34 @@ export default function Header() {
       <div className='container'>
         <div className={cl.header__holder}>
           <Link className={cl.header__title} to='/'>
-            <i className='owf owf-804 owf-3x icon-style'/>Погода
+            <i className='owf owf-804 owf-3x icon-style'/>WISICO
           </Link>
-          <div className={cl.header_auth}>
-            {isAuth 
-              ? <Link className={cl.header__profile} to='/profile'>Профиль</Link>
-              : <div>
-                  <Link className={cl.header__auth} to='/login'>Войти</Link>
-                  <Link className={cl.header__auth} to='/register'>Регестрация</Link>
-                </div>
-            }
+          <div className={cl.header__nav}>
+            <div className={cl.header__auth}>
+              {isAuth 
+                ? <Link className={cl.header__auth} to='/profile'>Profile</Link>
+                : <div>
+                    <Link className={cl.header__auth} to='/login'>Login</Link>
+                    <Link className={cl.header__auth} to='/register'>Register</Link>
+                  </div>
+              }
+            </div>
+            <button className={cl.header__theme}>Dark</button>
+            <select
+              className={cl.header__select}
+              name="selectCity"
+              defaultValue='1'
+            >
+              <option value='EN'>
+                EN
+              </option>
+              <option value='RU'>
+                RU
+              </option>
+              <option value='UA'>
+                UA
+              </option>
+            </select>
           </div>
         </div>
       </div>

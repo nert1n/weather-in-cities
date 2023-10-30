@@ -1,23 +1,29 @@
 .error {
-    &__holder {
-        h1, h2, a {
-            display: flex;
-            width: max-content;
-            font-family: 'Ubuntu', sans-serif;
-            font-size: 24px;
-            margin: 0 auto;
-        }
-        h1 {
-            font-size: 32px;
-            font-weight: 700;
-            margin-bottom: 5px;
-        }
-        h2 {
-            margin-bottom: 5px;
-        }
-        a {
-            border: black 1px solid;
-            color: blue;
-        }
+    font-family: 'Inter', sans-serif;
+    width: 600px;
+    background-color: #E9CCCC;
+    color: #1C1C1C;
+    border-radius: 20px;
+    padding: 40px 80px;
+    margin: 100px auto 0 auto;
+    h1, h2, a {
+        display: flex;
+        width: max-content;
+        font-size: 24px;
+        margin: 0 auto;
+    }
+    h1 {
+        color: #FF1818;
+        font-size: 32px;
+        margin-bottom: 5px;
+    }
+    h2 {
+        margin-bottom: 20px;
+    }
+    a {
+        background-color: #96ED88;
+        color: #1C1C1C;
+        border-radius: 30px;
+        padding: 15px 150px;
     }
 }

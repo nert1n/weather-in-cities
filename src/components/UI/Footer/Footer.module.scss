@@ -1,14 +1,21 @@
 .footer {
     display: flex;
-    justify-content: center;
-    align-items: center;
     width: 100%;
-    height: 50px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 18px;
-    color: rgba(0, 0, 0, 0.788);
-    padding: 75px 0 50px 0;
+    height: 100px;
+    color: rgba(255, 255, 255, 0.788);
+    background-color: #5F6A7B;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    box-shadow: 0px -5px 10px rgb(175, 175, 175);
+    padding: 40px 0;
+    margin-top: 100px;
     a {
+        color: #97afff;
         text-decoration: underline;
+    }
+    &__holder {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 }
