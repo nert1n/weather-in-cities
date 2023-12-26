@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useFetching } from '../hooks/useFetching';
-import { syncState } from '../redux/slices/citySlice'
 import WeatherList from './../components/WeatherList/WeatherList';
 import WeaterCard from './../components/WeatherCard/WeatherCard.jsx';
 import PostService from './../API/PostServise';
@@ -11,7 +10,7 @@ export default function WeatherInfo() {
     const city = useSelector((state) => state.city.value);
 
     const [weatherInfo, setWeatherInfo] = useState([]);
-    const [time, setTime] = useState(18);
+    const [time, setTime] = useState(21);
     
     const [fetchWeather, isWeatherLoading, weatherError] = useFetching( async () => {
         const weather = await PostService.getAll({city});
@@ -44,8 +43,6 @@ export default function WeatherInfo() {
                                     <WeaterCard
                                         key={index}
                                         weatherInfo={el}
-                                        city={city}
-                                        time={time}
                                     />
                                 ))}
                             </div>
