@@ -7,7 +7,7 @@ export default function Error() {
     <div className={cl.error}>
       <h1>Error 404</h1>
       <h2>Page not found</h2>
-      <Link to='/'>Return back</Link>
+      <Link to='/weather-in-cities/'>Return back</Link>
     </div>
   )
 }

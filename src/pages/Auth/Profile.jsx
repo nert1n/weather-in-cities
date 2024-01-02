@@ -17,7 +17,7 @@ export default function Profile() {
           <h1 className='profile__title'>My profile</h1>
           <div className='profile__img'>
             {/* <img src="" alt="#" /> */}
-            <Link className='profile__exit' onClick={handleCityChange} to='/'>Exit</Link>
+            <Link className='profile__exit' onClick={handleCityChange} to='/weather-in-cities/'>Exit</Link>
           </div>
         </div>
       </div>

@@ -7,14 +7,16 @@
     border-radius: 10px;
     box-shadow: 0px 0px 0px #9c9c9c;
     padding: 10px;
-    margin: 0px 10px;
+    margin: 0 auto;
     transform: scale(1);
     transition: all 0.2s linear;
+
     &:hover {
         background-color: #e7ecf3;
         box-shadow: 0px 0px 15px #9c9c9c;
         transform: scale(1.02);
     }
+
     &__day,
     &__img,
     &__celsia,

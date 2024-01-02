@@ -22,12 +22,12 @@ export default function AppRouter() {
             ))}
             <Route path="*" element={<Error />} />
             <Route
-            path="/login"
-            element={<Navigate to="/" replace />}
+            path="/weather-in-cities/login"
+            element={<Navigate to="/weather-in-cities/" replace />}
             />
             <Route
-            path="/register"
-            element={<Navigate to="/" replace />}
+            path="/weather-in-cities/register"
+            element={<Navigate to="/weather-in-cities/" replace />}
             />
             </Routes>
                 : 

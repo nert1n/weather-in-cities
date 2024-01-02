@@ -1,25 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import cl from './Header.module.scss'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux';
 
 export default function Header() {
   const isAuth = useSelector((state) => state.auth.value);
+  const [active, setActive] = useState(false)
 
   return (
     <div className={cl.header}>
       <div className='container'>
         <div className={cl.header__holder}>
-          <Link className={cl.header__title} to='/'>
+          <Link className={cl.header__title} to='/weather-in-cities/'>
             <i className='owf owf-804 owf-3x icon-style'/>WISICO
           </Link>
-          <div className={cl.header__nav}>
+          <div className={`${cl.header__nav} ${active ? cl.active : ''}`}>
             <div className={cl.header__auth}>
               {isAuth 
-                ? <Link className={cl.header__auth} to='/profile'>Profile</Link>
+                ? <Link className={cl.header__auth} to='/weather-in-cities/profile'>Profile</Link>
                 : <div>
-                    <Link className={cl.header__auth} to='/login'>Login</Link>
-                    <Link className={cl.header__auth} to='/register'>Register</Link>
+                    <Link className={cl.header__auth} to='/weather-in-cities/login'>Login</Link>
+                    <Link className={cl.header__auth} to='/weather-in-cities/register'>Register</Link>
                   </div>
               }
             </div>
@@ -39,6 +40,9 @@ export default function Header() {
                 UA
               </option>
             </select>
+          </div>
+          <div class={`${cl.burger} ${active ? cl.active : ''}`} onClick={() => {setActive(!active)}}>
+            <span></span>
           </div>
         </div>
       </div>

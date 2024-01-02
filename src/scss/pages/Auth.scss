@@ -6,7 +6,7 @@
     &__holder {
         width: 50vw;
         min-width: 250px;
-        max-width: 500px;
+        max-width: 400px;
         margin: 0 auto;
     }
     &__form {
@@ -16,8 +16,8 @@
         width: 100%;
         background-color: #D9E4E7;
         border-radius: 10px;
-        font-size: 24px;
-        padding: 25px;
+        font-size: 18px;
+        padding: 15px;
         margin: 0 auto 10px auto;
     }
     &__button {
@@ -27,9 +27,9 @@
         width: 100%;
         background-color: #E3EDCD;
         color: #1C1C1C;
-        font-size: 36px;
+        font-size: 24px;
         border-radius: 10px;
-        padding: 14px 0;
+        padding: 15px 0;
         margin: 20px auto 0 auto;
     }
     &__help {

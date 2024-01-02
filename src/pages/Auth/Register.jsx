@@ -19,11 +19,11 @@ export default function Register() {
             <input className='auth__input' type="email" placeholder="Email"/>
             <input className='auth__input' type="password" placeholder="Password"/>
             <input className='auth__input' type="password" placeholder="Agree password"/>
-            <Link className='auth__button' onClick={handleCityChange} to='/'>Register</Link>
+            <Link className='auth__button' onClick={handleCityChange} to='/weather-in-cities/'>Register</Link>
           </form>
           <div className='auth__help'>
-            <Link to='/forgot-password'></Link>
-            <Link to='/login'>I have an account</Link>
+            <Link to='/weather-in-cities/forgot-password'></Link>
+            <Link to='/weather-in-cities/login'>I have an account</Link>
           </div>
         </div>
       </div>

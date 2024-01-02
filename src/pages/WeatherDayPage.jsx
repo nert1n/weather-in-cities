@@ -18,11 +18,12 @@ export default function WeatherDayPage() {
   const [fetchWeather, isWeatherLoading, weatherError] = useFetching( async () => {
     const weather = await PostService.getAll({city});
     const dailyData = weather.list.filter((reading) =>
-      reading.dt_txt.includes(`${params.year}-${month}-${params.day}`)
-    );
+    reading.dt_txt.includes(`${month}-${params.day}`)
+  );
     setWeatherInfo(dailyData);
   })
-
+  console.log(params.day);
+  console.log(weatherInfo);
   useEffect(() => {
     fetchWeather()
   }, [])

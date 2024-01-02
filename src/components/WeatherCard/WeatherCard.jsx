@@ -45,7 +45,7 @@ export default function WeatherCard(props) {
   const celsiaDay = Math.round(props.weatherInfo.main.temp)
 
   return (
-    <Link className={cl.card} to={`/${city}/${year}/${month}/${day}/${weekday}`}> 
+    <Link className={cl.card} to={`/weather-in-cities/${city}/${year}/${month}/${day}/${weekday}`}> 
         <i className={`${imgURL} ${cl.card__img}`}/>
         <p className={cl.card__celsia}>
           {celsiaDay}°C

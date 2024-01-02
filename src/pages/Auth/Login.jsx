@@ -18,11 +18,11 @@ export default function Login() {
           <form className='auth__form'>
             <input className='auth__input' type="email" placeholder="Email"/>
             <input className='auth__input' type="password" placeholder="Password"/>
-            <Link className='auth__button' onClick={handleCityChange} to='/'>Login</Link>
+            <Link className='auth__button' onClick={handleCityChange} to='/weather-in-cities/'>Login</Link>
           </form>
           <div className='auth__help'>
-            <Link to='/forgot-password'>Forgot password</Link>
-            <Link to='/register'>I don't have an account</Link>
+            <Link to='/weather-in-cities/forgot-password'>Forgot password</Link>
+            <Link to='/weather-in-cities/register'>I don't have an account</Link>
           </div>
         </div>
       </div>

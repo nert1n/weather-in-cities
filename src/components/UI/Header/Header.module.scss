@@ -49,3 +49,115 @@
         }
     }
 }
+
+.burger {
+    z-index: 2;
+    display: none;
+    position: relative;
+    height: 22px;
+    width: 30px;
+    min-width: 30px;
+    cursor: pointer;
+    margin-left: 20px;
+ 
+    span {
+       position: absolute;
+       background-color: #fff;
+       left: 0;
+       width: 100%;
+       height: 3px;
+       top: 9px;
+       transition: all 0.2s ease 0s;
+    }
+ 
+    &::before,
+    &::after {
+       content: '';
+       background-color: #fff;
+       position: absolute;
+       width: 100%;
+       height: 3px;
+       left: 0;
+       transition: all 0.3s ease 0s;
+    }
+ 
+    &::before {
+       top: 0;
+    }
+ 
+    &::after {
+       bottom: 0;
+    }
+}
+
+.burger.active {
+    &::before {
+       transform: rotate(45deg);
+       top: 9px;
+    }
+ 
+    &::after {
+       transform: rotate(-45deg);
+       bottom: 9px;
+    }
+ 
+    span {
+       transform: scale(0);
+    }
+}
+
+@media (max-width: 750px) {
+    .header {
+        &__nav {
+            z-index: 2;
+            display: block;
+            position: fixed;
+            font-size: 24px;
+            background-color: #004052dd;
+            padding: 100px 50px 1000px 40px;
+            margin: 0 auto;
+            transition: all 0.2s linear;
+            top: 0px;
+            right: -230px;
+
+            &.active {
+                right: 0px;
+            }
+        }
+        &__auth {
+            display: block;
+            margin-bottom: 10px;
+
+            a {
+                text-align: right;
+                margin-bottom: 10px;
+
+                &:last-child {
+                    margin: 0;
+                }
+            }
+        }
+
+        &__theme {
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            width: 100%;
+            font-size: 24px;
+            margin: 0 0 15px 0;
+        }
+
+        &__select {
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            width: 100%;
+            font-size: 16px;
+            margin: 0;
+        }
+    }
+
+    .burger {
+        display: flex;
+    }
+}

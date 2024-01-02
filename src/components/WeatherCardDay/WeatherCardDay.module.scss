@@ -6,9 +6,8 @@
     color: #1C1C1C;
     border-radius: 10px;
     padding: 10px;
-    &:not(:last-child) {
-        margin-right: 25px;
-    }
+    margin: 0 auto;
+
     &__img {
         display: flex;
         justify-content: center;
@@ -17,9 +16,11 @@
         color: #74EEFF;
         margin: 10px auto 0 auto;
     }
+
     &__time {
         font-size: 24px;
     }
+
     &__temp {
         font-size: 28px;
     }
