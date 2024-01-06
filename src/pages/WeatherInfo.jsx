@@ -6,7 +6,9 @@ import WeaterCard from './../components/WeatherCard/WeatherCard.jsx';
 import PostService from './../API/PostServise';
 import Loader from '../components/UI/loader/Loader';
 
-export default function WeatherInfo() {
+export default function WeatherInfo(props) {
+    document.title = props.title
+
     const city = useSelector((state) => state.city.value);
 
     const [weatherInfo, setWeatherInfo] = useState([]);

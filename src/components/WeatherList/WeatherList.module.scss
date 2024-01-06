@@ -3,24 +3,29 @@
     justify-content: space-between;
     align-items: center;
     font-family: 'Inter', sans-serif;
-    color: #1C1C1C;
+    color: var(--text-color--black);
     margin-bottom: 60px;
+
     &__input {
         display: flex;
         height: 50px;
         width: 25%;
         font-size: 24px;
-        background-color: #D9E0EB;
+        background-color: var(--background-input-color);
+        color: var(--text-color--black);
         border-radius: 5px;
         padding: 10px;
+        transition: all 0.2s linear;
     }
+    
     &__select {
         cursor: pointer;
         display: flex;
         align-items: center;
         height: 50px;
         border-radius: 5px;
-        background-color: #D9E0EB;
+        background-color: var(--background-input-color);
+        color: var(--text-color--black);
         font-size: 24px;
         padding: 10px;
     }

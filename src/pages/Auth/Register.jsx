@@ -1,10 +1,11 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { isTrue } from '../../redux/slices/authSlice';
 import { Link } from 'react-router-dom';
 
-export default function Register() {
-  const isAuth = useSelector((state) => state.auth.value);
+export default function Register(props) {
+  document.title = props.title
+
   const dispatch = useDispatch()
   const handleCityChange = () => {
     dispatch(isTrue())

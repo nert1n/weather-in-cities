@@ -1,24 +1,25 @@
 .profile {
-    &__holder {
-        
-    }
     &__title {
         display: flex;
         justify-content: center;
         align-items: center;
         font-size: 32px;
+        color: var(--text-color--black);
     }
+
     &__img {
         width: 200px;
         height: 500px;
     }
+
     &__exit {
         display: flex;
         justify-content: center;
         align-items: center;
         width: 100px;
-        background-color: #adadad;
-        color: red;
+        font-size: 18px;
+        background-color: var(--background-input-color);
+        color: var(--text-color--white);
         padding: 20px 0;
         margin-top: 20px;
     }

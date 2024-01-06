@@ -2,8 +2,8 @@
     font-family: 'Inter', sans-serif;
     width: 200px;
     height: 250px;
-    color: black;
-    background-color: #A7B6CD;
+    color: var(--text-color--black);
+    background-color: var(--background-color--white_grey);
     border-radius: 10px;
     box-shadow: 0px 0px 0px #9c9c9c;
     padding: 10px;
@@ -12,7 +12,7 @@
     transition: all 0.2s linear;
 
     &:hover {
-        background-color: #e7ecf3;
+        background-color: var(--background-color--white_grey-light);
         box-shadow: 0px 0px 15px #9c9c9c;
         transform: scale(1.02);
     }
@@ -26,17 +26,20 @@
         align-items: center;
         font-size: 24px;
     }
+
     &__day {
         font-size: 20px;
         font-weight: 400;
         margin-bottom: 15px;
     }
+
     &__img {
         color: #74EEFF;
         font-size: 130px;
         border-radius: 40%;
         margin: 0 auto;
     }
+    
     &__celsia {
         font-size: 32px;
         margin-bottom: 15px;

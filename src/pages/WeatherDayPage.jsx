@@ -7,7 +7,9 @@ import PostService from '../API/PostServise';
 import WeatherCardDay from '../components/WeatherCardDay/WeatherCardDay';
 import Error from './../components/UI/Error/Error';
 
-export default function WeatherDayPage() {
+export default function WeatherDayPage(props) {
+  document.title = props.title
+  
   const city = useSelector((state) => state.city.value);
   const [weatherInfo, setWeatherInfo] = useState([]);
   const params = useParams();
@@ -22,8 +24,7 @@ export default function WeatherDayPage() {
   );
     setWeatherInfo(dailyData);
   })
-  console.log(params.day);
-  console.log(weatherInfo);
+
   useEffect(() => {
     fetchWeather()
   }, [])

@@ -3,41 +3,44 @@
     justify-content: center;
     align-items: center;
     margin-top: 100px;
+
     &__holder {
         width: 50vw;
         min-width: 250px;
         max-width: 400px;
         margin: 0 auto;
     }
-    &__form {
-    }
+
     &__input {
         display: flex;
         width: 100%;
-        background-color: #D9E4E7;
+        background-color: var(--background-input-color--white_little-blue);
         border-radius: 10px;
         font-size: 18px;
         padding: 15px;
         margin: 0 auto 10px auto;
     }
+
     &__button {
         display: flex;
         justify-content: center;
         align-items: center;
         width: 100%;
-        background-color: #E3EDCD;
-        color: #1C1C1C;
+        background-color: var(--background-input-color--white_little-green);
+        color: var(--text-color--black);
         font-size: 24px;
         border-radius: 10px;
         padding: 15px 0;
         margin: 20px auto 0 auto;
     }
+
     &__help {
         display: flex;
         justify-content: space-between;
         margin-top: 5px;
+
         a {
-            color: #233B90;
+            color: var(--text-color--dark_blue);
             text-decoration: underline;
         }
     }

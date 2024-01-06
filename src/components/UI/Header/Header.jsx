@@ -7,6 +7,18 @@ export default function Header() {
   const isAuth = useSelector((state) => state.auth.value);
   const [active, setActive] = useState(false)
 
+  const [theme, setTheme] = useState('light')
+
+  function handleThemeChange() {
+    if (document.documentElement.attributes[1].value == `light`) {
+      document.documentElement.setAttribute("data-theme", "dark");
+      setTheme('dark')
+    } else {
+      document.documentElement.setAttribute("data-theme", "light");
+      setTheme('light')
+    }
+  }
+
   return (
     <div className={cl.header}>
       <div className='container'>
@@ -24,7 +36,12 @@ export default function Header() {
                   </div>
               }
             </div>
-            <button className={cl.header__theme}>Dark</button>
+            <button className={cl.header__theme} onClick={handleThemeChange}>
+              {theme == `light` 
+              ? 'Dark'
+              : 'Light'
+              }
+            </button>
             <select
               className={cl.header__select}
               name="selectCity"
@@ -41,7 +58,7 @@ export default function Header() {
               </option>
             </select>
           </div>
-          <div class={`${cl.burger} ${active ? cl.active : ''}`} onClick={() => {setActive(!active)}}>
+          <div className={`${cl.burger} ${active ? cl.active : ''}`} onClick={() => {setActive(!active)}}>
             <span></span>
           </div>
         </div>

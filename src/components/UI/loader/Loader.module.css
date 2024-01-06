@@ -6,10 +6,10 @@
 }
 
 .loader {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    border: 5px dashed rgba(0, 0, 0, 0.76);
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;    
+    border: 8px dashed var(--text-color--black);
     animation: rotate 2.5s infinite linear;
 }
 

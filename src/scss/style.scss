@@ -1,10 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import "./icons/icons/owfont-regular.css";
 @import "./base/nule.scss";
 @import "./pages/WeatherDay.scss";
 @import "./pages/Auth.scss";
 @import "./pages/Profile.scss";
-@import "./icons/icons/owfont-regular.css";
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+:root {
+    --text-color--white: #ffffff;
+    --text-color--black: #1C1C1C;
+    --text-color--red: #ff0000;
+    --text-color--dark_blue: #233B90;
+
+    --background-color: #ffffff;
+    --background-color--grey_little-blue: #5F6A7B;
+    --background-color--white_green: #96ED88;
+    --background-color--white_red: #E9CCCC;
+    --background-color--white_grey: #A7B6CD;
+    --background-color--white_grey-light: #e7ecf3;
+
+    --background-input-color: #bfc8d8;
+    --background-input-color--white_little-blue: #D9E4E7;
+    --background-input-color--white_little-green: #E3EDCD;
+
+    --shadows-color: #808080;
+
+
+    &[data-theme='light'] {
+        --text-color--white: #ffffff;
+        --text-color--black: #1C1C1C;
+        --text-color--red: #ff0000;
+        --text-color--dark_blue: #233B90;
+
+        --background-color: #ffffff;
+        --background-color--grey_little-blue: #5F6A7B;
+        --background-color--white_green: #96ED88;
+        --background-color--white_red: #E9CCCC;
+        --background-color--white_grey: #A7B6CD;
+        --background-color--white_grey-light: #e7ecf3;
+    
+        --background-input-color: #bfc8d8;
+        --background-input-color--white_little-blue: #D9E4E7;
+        --background-input-color--white_little-green: #E3EDCD;
+    
+        --shadows-color: #808080;
+    }
+
+    &[data-theme='dark'] {
+        --text-color--white: #ffffff;
+        --text-color--black: #ffffff;
+        --text-color--red: #ff0000;
+        --text-color--dark_blue: #3762ff;
+
+        --background-color: #33353c;
+        --background-color--grey_little-blue: #5F6A7B;
+        --background-color--white_green: #285f1f;
+        --background-color--white_red: #724242;
+        --background-color--white_grey: #6a7482;
+        --background-color--white_grey-light: #aaaeb3;
+    
+        --background-input-color: #818792;
+        --background-input-color--white_little-blue: #D9E4E7;
+        --background-input-color--white_little-green: #5a9a37;
+    
+        --shadows-color: #51515155;
+    }
+}
+
+body {
+    background-color: var(--background-color);
+    transition: all 0.2s linear;
+}
 
 .container {
     width: 85%;
@@ -18,15 +84,19 @@
 }
 
 .main {
-    color: #1C1C1C;
+    color: var(--text-color-dark);
+
     &__city {
         display: flex;
         justify-content: center;
         align-items: center;
+        color: var(--text-color--black);
         font-size: 32px;
         margin: 0 auto;
         margin-bottom: 50px;
+        transition: all 0.2s linear;
     }
+
     &__cards {
         display: flex;
         justify-content: space-between;

@@ -5,14 +5,49 @@ import Register from './../pages/Auth/Register';
 import Login from './../pages/Auth/Login';
 
 export const publicRoutes = [
-    {path: '/weather-in-cities/', component: WeatherInfo, exact: true},
-    {path: '/weather-in-cities/:city/:year/:month/:day/:weekday', component: WeatherDayPage, exact: true},
-    {path: '/weather-in-cities/login', component: Login, exact: true},
-    {path: '/weather-in-cities/register', component: Register, exact: true},
+    {
+        path: '/weather-in-cities/',
+        component: WeatherInfo,
+        title: 'WISICO - Main page',
+        exact: true,
+    },
+    {
+        path: '/weather-in-cities/:city/:year/:month/:day/:weekday',
+        component: WeatherDayPage,
+        title: 'WISICO - Day page',
+        exact: true,
+    },
+    {
+        path: '/weather-in-cities/login',
+        component: Login,
+        title: 'WISICO - Login page',
+        exact: true,
+    },
+    {
+        path: '/weather-in-cities/register',
+        component: Register,
+        title: 'WISICO - Register page',
+        exact: true,
+    },
 ]
 
 export const privateRoutes = [
-    {path: '/weather-in-cities/', component: WeatherInfo, exact: true},
-    {path: '/weather-in-cities/:city/:year/:month/:day/:weekday', component: WeatherDayPage, exact: true},
-    {path: '/weather-in-cities/profile', component: Profile, exact: true},
+    {
+        path: '/weather-in-cities/',
+        component: WeatherInfo,
+        title: 'WISICO - Main page',
+        exact: true,
+    },
+    {
+        path: '/weather-in-cities/:city/:year/:month/:day/:weekday',
+        component: WeatherDayPage,
+        title: 'WISICO - Day page',
+        exact: true,
+    },
+    {
+        path: '/weather-in-cities/profile',
+        component: Profile,
+        title: 'WISICO - Profile page',
+        exact: true,
+    },
 ]

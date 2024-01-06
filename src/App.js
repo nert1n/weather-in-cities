@@ -1,6 +1,5 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import './scss/style.scss'
-import { publicRoutes } from "./router";
 import Header from './components/UI/Header/Header';
 import Footer from './components/UI/Footer/Footer';
 import { createContext } from 'react';

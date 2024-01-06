@@ -1,28 +1,32 @@
 .error {
     font-family: 'Inter', sans-serif;
     width: 600px;
-    background-color: #E9CCCC;
-    color: #1C1C1C;
+    background-color: var(--background-color--white_red);
+    color: var(--text-color--black);
     border-radius: 20px;
     padding: 40px 80px;
     margin: 100px auto 0 auto;
+
     h1, h2, a {
         display: flex;
         width: max-content;
         font-size: 24px;
         margin: 0 auto;
     }
+
     h1 {
-        color: #FF1818;
+        color: var(--text-color--red);
         font-size: 32px;
         margin-bottom: 5px;
     }
+
     h2 {
         margin-bottom: 20px;
     }
+
     a {
-        background-color: #96ED88;
-        color: #1C1C1C;
+        background-color: var(--background-color--white_green);
+        color: var(--text-color--black);
         border-radius: 30px;
         padding: 15px 150px;
     }

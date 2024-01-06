@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { privateRoutes } from '../router'
 import { publicRoutes } from './../router/index';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import Error from './UI/Error/Error';
 import { useSelector } from 'react-redux';
+import Error from './UI/Error/Error';
 
 export default function AppRouter() {
     const isAuth = useSelector((state) => state.auth.value);
@@ -11,40 +11,37 @@ export default function AppRouter() {
     return (
         <div className="content">
         {isAuth
-            ? <Routes>
-            {privateRoutes.map((route) => (
-            <Route
-                key={route.path}
-                path={route.path}
-                element={<route.component />}
-                exact={route.exact}
-            />
-            ))}
-            <Route path="*" element={<Error />} />
-            <Route
-            path="/weather-in-cities/login"
-            element={<Navigate to="/weather-in-cities/" replace />}
-            />
-            <Route
-            path="/weather-in-cities/register"
-            element={<Navigate to="/weather-in-cities/" replace />}
-            />
-            </Routes>
-                : 
+            ?
                 <Routes>
-                {publicRoutes.map((route) => (
-                <Route
-                    key={route.path}
-                    path={route.path}
-                    element={<route.component />}
-                    exact={route.exact}
-                />
-                ))}
-                <Route path="*" element={<Error />} />
-                {/* <Route
-                path="*"
-                element={<Navigate to="/login" replace />}
-                /> */}
+                    {privateRoutes.map((route) => (
+                        <Route
+                            key={route.path}
+                            path={route.path}
+                            element={<route.component title={route.title}/>}
+                            exact={route.exact}
+                        />
+                    ))}
+                    <Route path="*" element={<Error />} />
+                    <Route
+                        path="/weather-in-cities/login"
+                        element={<Navigate to="/weather-in-cities/" replace />}
+                    />
+                    <Route
+                        path="/weather-in-cities/register"
+                        element={<Navigate to="/weather-in-cities/" replace />}
+                    />
+                </Routes>
+            : 
+                <Routes>
+                    {publicRoutes.map((route) => (
+                        <Route
+                            key={route.path}
+                            path={route.path}
+                            element={<route.component title={route.title}/>}
+                            exact={route.exact}
+                        />
+                    ))}
+                    <Route path="*" element={<Error />} />
                 </Routes>
             }
         </div>
