@@ -2,10 +2,13 @@ import React, { useState } from 'react'
 import cl from './Header.module.scss'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 
 export default function Header() {
   const isAuth = useSelector((state) => state.auth.value);
   const [active, setActive] = useState(false)
+
+  const { t, i18n } = useTranslation();
 
   const [theme, setTheme] = useState('light')
 
@@ -19,6 +22,10 @@ export default function Header() {
     }
   }
 
+  const changeLanguage = (language) => {
+    i18n.changeLanguage(language.target.value);
+  };
+  
   return (
     <div className={cl.header}>
       <div className='container'>
@@ -29,31 +36,29 @@ export default function Header() {
           <div className={`${cl.header__nav} ${active ? cl.active : ''}`}>
             <div className={cl.header__auth}>
               {isAuth 
-                ? <Link className={cl.header__auth} to='/weather-in-cities/profile'>Profile</Link>
+                ? <Link className={cl.header__auth} to='/weather-in-cities/profile'>{t('Profile')}</Link>
                 : <div>
-                    <Link className={cl.header__auth} to='/weather-in-cities/login'>Login</Link>
-                    <Link className={cl.header__auth} to='/weather-in-cities/register'>Register</Link>
+                    <Link className={cl.header__auth} to='/weather-in-cities/login'>{t('Login')}</Link>
+                    <Link className={cl.header__auth} to='/weather-in-cities/register'>{t('Register')}</Link>
                   </div>
               }
             </div>
             <button className={cl.header__theme} onClick={handleThemeChange}>
               {theme == `light` 
-              ? 'Dark'
-              : 'Light'
+              ? `${t('Dark')}`
+              : `${t('Light')}`
               }
             </button>
             <select
               className={cl.header__select}
               name="selectCity"
               defaultValue='1'
+              onChange={changeLanguage}
             >
-              <option value='EN'>
+              <option value='en'>
                 EN
               </option>
-              <option value='RU'>
-                RU
-              </option>
-              <option value='UA'>
+              <option value='ua'>
                 UA
               </option>
             </select>

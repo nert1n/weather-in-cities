@@ -2,14 +2,16 @@ import React, { useRef, useState } from 'react'
 import cl from './WeatherList.module.scss'
 import { useSelector, useDispatch } from 'react-redux';
 import { syncState } from '../../redux/slices/citySlice';
+import { useTranslation } from 'react-i18next';
 
 export default function WeatherList(props) {
     const city = useSelector((state) => state.city.value);
     const dispatch = useDispatch()
+    const { t, i18n } = useTranslation();
     const weatherList = [
         {
-            country: 'Украина',
-            city: ['Киев', 'Черкассы', 'Днепр'],
+            country: `${t('Ukraine')}`,
+            city: [`${t('Kiev')}`, `${t('Cherkasy')}`, `${t('Dnepro')}`],
         },
     ];
     

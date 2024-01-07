@@ -10,13 +10,13 @@ export const ConfigContext = createContext();
 function App() {
   return (
     <div className="App">
-        <BrowserRouter>
-          <Header/>
-          
-          <AppRouter/>
-          
-          <Footer/>
-        </BrowserRouter>
+      <BrowserRouter>
+        <Header/>
+
+        <AppRouter/>
+
+        <Footer/>
+      </BrowserRouter>
     </div>
   );
 }

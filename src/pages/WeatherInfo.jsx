@@ -5,17 +5,20 @@ import WeatherList from './../components/WeatherList/WeatherList';
 import WeaterCard from './../components/WeatherCard/WeatherCard.jsx';
 import PostService from './../API/PostServise';
 import Loader from '../components/UI/loader/Loader';
+import { useTranslation } from 'react-i18next';
 
 export default function WeatherInfo(props) {
     document.title = props.title
 
-    const city = useSelector((state) => state.city.value);
+    const { t, i18n } = useTranslation();
+    const language = i18n.language
 
+    const city = useSelector((state) => state.city.value);
     const [weatherInfo, setWeatherInfo] = useState([]);
     const [time, setTime] = useState(21);
     
     const [fetchWeather, isWeatherLoading, weatherError] = useFetching( async () => {
-        const weather = await PostService.getAll({city});
+        const weather = await PostService.getAll({language, city});
         const dailyData = weather.list.filter((reading) =>
             reading.dt_txt.includes(`${time}:00:00`)
         );

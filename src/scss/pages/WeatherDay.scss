@@ -6,6 +6,7 @@
     color: var(--text-color--black);
     font-size: 32px;
     margin: 0 auto;
+    transition: all 0.2s linear;
 
     &__holder {
         display: flex;

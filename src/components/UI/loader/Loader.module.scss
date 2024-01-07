@@ -1,16 +1,16 @@
-.loader__holder{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 100px;
-}
-
 .loader {
     width: 150px;
     height: 150px;
     border-radius: 100%;    
     border: 8px dashed var(--text-color--black);
     animation: rotate 2.5s infinite linear;
+    
+    &__holder{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 100px;
+    }
 }
 
 @keyframes rotate {

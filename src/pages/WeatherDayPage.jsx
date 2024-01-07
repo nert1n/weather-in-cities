@@ -9,11 +9,11 @@ import Error from './../components/UI/Error/Error';
 
 export default function WeatherDayPage(props) {
   document.title = props.title
-  
+
   const city = useSelector((state) => state.city.value);
   const [weatherInfo, setWeatherInfo] = useState([]);
   const params = useParams();
-
+  console.log(params);
   const date = new Date(Date.parse(params.month + " 1, 2000"));
   const month = date.getMonth() + 1;
   
