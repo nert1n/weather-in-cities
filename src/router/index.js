@@ -6,13 +6,13 @@ import Login from './../pages/Auth/Login';
 
 export const publicRoutes = [
     {
-        path: '/weather-in-cities/',
+        path: '/weather-in-cities',
         component: WeatherInfo,
         title: 'WISICO - Main page',
         exact: true,
     },
     {
-        path: '/weather-in-cities/:city/:year/:month/:day/:weekday',
+        path: '/weather-in-cities/:city/:month/:day',
         component: WeatherDayPage,
         title: 'WISICO - Day page',
         exact: true,
@@ -33,13 +33,13 @@ export const publicRoutes = [
 
 export const privateRoutes = [
     {
-        path: '/weather-in-cities/',
+        path: '/weather-in-cities',
         component: WeatherInfo,
         title: 'WISICO - Main page',
         exact: true,
     },
     {
-        path: '/weather-in-cities/:city/:year/:month/:day/:weekday',
+        path: '/weather-in-cities/:city/:month/:day',
         component: WeatherDayPage,
         title: 'WISICO - Day page',
         exact: true,

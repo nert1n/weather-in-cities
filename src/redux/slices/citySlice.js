@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-    value: 'Киев',
+    value: 'Kiev',
 }
 
 export const citySlice = createSlice({

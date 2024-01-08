@@ -1,15 +1,17 @@
 .error {
     font-family: 'Inter', sans-serif;
-    width: 600px;
+    width: 85vw;
+    max-width: 600px;
     background-color: var(--background-color--white_red);
     color: var(--text-color--black);
     border-radius: 20px;
-    padding: 40px 80px;
+    padding: 40px 60px;
     margin: 100px auto 0 auto;
 
     h1, h2, a {
         display: flex;
-        width: max-content;
+        justify-content: center;
+        align-items: center;
         font-size: 24px;
         margin: 0 auto;
     }
@@ -25,9 +27,18 @@
     }
 
     a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         background-color: var(--background-color--white_green);
         color: var(--text-color--black);
         border-radius: 30px;
-        padding: 15px 150px;
+        padding: 15px 0;
+    }
+}
+
+@media (max-width: 500px) {
+    .error {
+        padding: 40px 40px;
     }
 }

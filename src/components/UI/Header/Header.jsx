@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import cl from './Header.module.scss'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux';
@@ -25,13 +25,19 @@ export default function Header() {
   const changeLanguage = (language) => {
     i18n.changeLanguage(language.target.value);
   };
+
+  useEffect(() => {
+    if (i18n.options.resources[i18n.language] != undefined) {
+      document.getElementById('selectLang').value = i18n.language
+    }
+  }, [i18n.language])
   
   return (
     <div className={cl.header}>
       <div className='container'>
         <div className={cl.header__holder}>
           <Link className={cl.header__title} to='/weather-in-cities/'>
-            <i className='owf owf-804 owf-3x icon-style'/>WISICO
+            <i className='owf owf-804 owf-2x icon-style'/>WISICO
           </Link>
           <div className={`${cl.header__nav} ${active ? cl.active : ''}`}>
             <div className={cl.header__auth}>
@@ -51,16 +57,13 @@ export default function Header() {
             </button>
             <select
               className={cl.header__select}
-              name="selectCity"
+              id='selectLang'
+              name="selectLang"
               defaultValue='1'
               onChange={changeLanguage}
             >
-              <option value='en'>
-                EN
-              </option>
-              <option value='ua'>
-                UA
-              </option>
+              <option value='en'>EN</option>
+              <option value='ua'>UA</option>
             </select>
           </div>
           <div className={`${cl.burger} ${active ? cl.active : ''}`} onClick={() => {setActive(!active)}}>

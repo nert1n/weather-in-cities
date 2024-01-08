@@ -32,7 +32,7 @@
         --text-color--red: #ff0000;
         --text-color--dark_blue: #233B90;
 
-        --background-color: #ffffff;
+        --background-color: #e9e9e9;
         --background-color--grey_little-blue: #5F6A7B;
         --background-color--white_green: #96ED88;
         --background-color--white_red: #E9CCCC;
@@ -40,8 +40,8 @@
         --background-color--white_grey-light: #e7ecf3;
     
         --background-input-color: #bfc8d8;
-        --background-input-color--white_little-blue: #D9E4E7;
-        --background-input-color--white_little-green: #E3EDCD;
+        --background-input-color--white_little-blue: #c7c7c7;
+        --background-input-color--white_little-green: #b6ff8e;
     
         --shadows-color: #808080;
     }
@@ -80,7 +80,7 @@ body {
 
 .content {
     font-family: 'Inter', sans-serif;
-    min-height: calc(100vh - 370px);
+    min-height: calc(100vh - 310px);
 }
 
 .main {
@@ -93,7 +93,7 @@ body {
         color: var(--text-color--black);
         font-size: 32px;
         margin: 0 auto;
-        margin-bottom: 50px;
+        margin-bottom: 30px;
         transition: all 0.2s linear;
     }
 

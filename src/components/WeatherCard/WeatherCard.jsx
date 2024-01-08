@@ -4,13 +4,10 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useFetching } from './../../hooks/useFetching';
 import PostService from './../../API/PostServise';
-import { useTranslation } from 'react-i18next';
 
 export default function WeatherCard(props) {
   const city = useSelector((state) => state.city.value);
   const [weatherInfo, setWeatherInfo] = useState([]);
-
-  const { t, i18n } = useTranslation();
 
   const imgURL = `owf owf-${props.weatherInfo.length > 0 ? 800 : props.weatherInfo.weather[0].id} owf-5x icon-style`
 
@@ -18,17 +15,10 @@ export default function WeatherCard(props) {
   const date = new Date(ms);
 
   let day = date.getDate();
-  if (day < 10) {
-    day = `0${day}`
-  }
-  
-  const year = date.toLocaleString(`${t('en')}`, {year: "numeric"});
-  const month = date.toLocaleString(`${t('en')}`, {month: "long"});
-  const weekday = date.toLocaleString(`${t('en')}`, {weekday: 'long'});
 
-  const yearEn = date.toLocaleString('en', {year: "numeric"});
-  const monthEn = date.toLocaleString('en', {month: "long"});
-  const weekdayEn = date.toLocaleString('en', {weekday: 'long'});
+  const year = date.toLocaleString('en', {year: "numeric"});
+  const month = date.toLocaleString('en', {month: "long"});
+  const weekday = date.toLocaleString('en', {weekday: 'long'});
 
   const dateMonth = new Date(Date.parse(month + " 1, 2000"));
   const monthNum = dateMonth.getMonth() + 1;
@@ -48,7 +38,10 @@ export default function WeatherCard(props) {
   const celsiaDay = Math.round(props.weatherInfo.main.temp)
 
   return (
-    <Link className={cl.card} to={`/weather-in-cities/${city}/${yearEn}/${monthEn}/${day}/${weekdayEn}`}> 
+    <Link 
+      className={cl.card} 
+      to={`/weather-in-cities/${city}/${month}/${day}`}
+    > 
         <i className={`${imgURL} ${cl.card__img}`}/>
         <p className={cl.card__celsia}>
           {celsiaDay}°C

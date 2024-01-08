@@ -21,7 +21,7 @@ export default function Login(props) {
           <form className='auth__form'>
             <input className='auth__input' type="email" placeholder={t('Email')}/>
             <input className='auth__input' type="password" placeholder={t('Password')}/>
-            <Link className='auth__button' onClick={handleCityChange} to='/weather-in-cities/'>{t('Login')}</Link>
+            <Link className='auth__button' onClick={handleCityChange} to='/weather-in-cities/'>{t('To come in')}</Link>
           </form>
           <div className='auth__help'>
             <Link to='/weather-in-cities/forgot-password'>{t('Forgot password')}</Link>

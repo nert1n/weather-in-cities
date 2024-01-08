@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef } from 'react'
 import cl from './WeatherList.module.scss'
 import { useSelector, useDispatch } from 'react-redux';
 import { syncState } from '../../redux/slices/citySlice';
@@ -11,7 +11,7 @@ export default function WeatherList(props) {
     const weatherList = [
         {
             country: `${t('Ukraine')}`,
-            city: [`${t('Kiev')}`, `${t('Cherkasy')}`, `${t('Dnepro')}`],
+            city: [`${t('Kiev')}`, `${t('Cherkasy')}`, `${t('Dnepr')}`],
         },
     ];
     
