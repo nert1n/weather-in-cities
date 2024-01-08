@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/weather-in-cities/static/css/main.495a4293.css",
-    "main.js": "/weather-in-cities/static/js/main.6426acd4.js",
+    "main.css": "/weather-in-cities/static/css/main.fec65849.css",
+    "main.js": "/weather-in-cities/static/js/main.3d130500.js",
     "static/media/owfont-regular.svg": "/weather-in-cities/static/media/owfont-regular.4fabe299e94a1f0d52bb.svg",
     "static/media/owfont-regular.ttf": "/weather-in-cities/static/media/owfont-regular.3d46599b045b6a14f599.ttf",
     "static/media/owfont-regular.eot": "/weather-in-cities/static/media/owfont-regular.77585afbae07886acc4e.eot",
     "static/media/owfont-regular.woff": "/weather-in-cities/static/media/owfont-regular.165d3deef009efd0c531.woff",
     "index.html": "/weather-in-cities/index.html",
-    "main.495a4293.css.map": "/weather-in-cities/static/css/main.495a4293.css.map",
-    "main.6426acd4.js.map": "/weather-in-cities/static/js/main.6426acd4.js.map"
+    "main.fec65849.css.map": "/weather-in-cities/static/css/main.fec65849.css.map",
+    "main.3d130500.js.map": "/weather-in-cities/static/js/main.3d130500.js.map"
   },
   "entrypoints": [
-    "static/css/main.495a4293.css",
-    "static/js/main.6426acd4.js"
+    "static/css/main.fec65849.css",
+    "static/js/main.3d130500.js"
   ]
 }
