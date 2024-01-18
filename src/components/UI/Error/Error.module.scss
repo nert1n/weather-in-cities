@@ -1,10 +1,9 @@
 .error {
-    font-family: 'Inter', sans-serif;
     width: 85vw;
     max-width: 600px;
-    background-color: var(--background-color--white_red);
-    color: var(--text-color--black);
+    background-color: #FFFFFFBF;
     border-radius: 20px;
+    color: #1C1C1C;
     padding: 40px 60px;
     margin: 100px auto 0 auto;
 
@@ -13,27 +12,27 @@
         justify-content: center;
         align-items: center;
         font-size: 24px;
+        font-weight: 400;
         margin: 0 auto;
     }
 
     h1 {
-        color: var(--text-color--red);
+        color: #FF1818;
         font-size: 32px;
+        font-weight: 600;
         margin-bottom: 5px;
-    }
-
-    h2 {
-        margin-bottom: 20px;
     }
 
     a {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: var(--background-color--white_green);
-        color: var(--text-color--black);
+        background-color: #96ED88;
         border-radius: 30px;
+        color: #1C1C1C;
+        font-weight: 500;
         padding: 15px 0;
+        margin-top: 25px;
     }
 }
 

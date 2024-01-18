@@ -1,17 +1,15 @@
-import React from 'react'
 import { useDispatch } from 'react-redux';
-import { isTrue } from '../../redux/slices/authSlice';
-import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
+import { isTrue } from '../../redux/slices/authSlice';
 
 export default function Profile(props) {
-  document.title = props.title
-
+  document.title = props.title;
   const { t, i18n } = useTranslation();
+  const dispatch = useDispatch();
 
-  const dispatch = useDispatch()
   const handleCityChange = () => {
-    dispatch(isTrue())
+    dispatch(isTrue());
   };
 
   return (
@@ -20,11 +18,11 @@ export default function Profile(props) {
         <div className='profile__holder'>
           <h1 className='profile__title'>{t('My profile')}</h1>
           <div className='profile__img'>
-            {/* <img src="" alt="#" /> */}
-            <Link className='profile__exit' onClick={handleCityChange} to='/weather-in-cities/'>{t('Exit')}</Link>
+            {/* <img src="" alt={t('Profile image')} /> */}
+            <Link className='profile__exit' onClick={handleCityChange} to='/weather-in-cities/' title={t('Button exit')}>{t('Exit')}</Link>
           </div>
         </div>
       </div>
     </main>
-  )
+  );
 }

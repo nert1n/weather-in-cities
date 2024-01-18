@@ -1,6 +1,6 @@
 {
   "name": "weather-info",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "private": true,
   "homepage": "https://nert1n.github.io/weather-in-cities",
   "dependencies": {
@@ -26,13 +26,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "eject": "react-scripts eject",
+    "lint": "eslint -c .eslintrc --ext .js,.jsx .",
+    "lint:fix": "npm run lint -- --fix"
   },
   "browserslist": {
     "production": [

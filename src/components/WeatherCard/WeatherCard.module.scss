@@ -1,19 +1,19 @@
 .card {
-    font-family: 'Inter', sans-serif;
     width: 200px;
-    height: 250px;
-    color: var(--text-color--black);
-    background-color: var(--background-color--white_grey);
+    min-height: 250px;
+    background-color: #ffffff;
     border-radius: 10px;
-    box-shadow: 0px 0px 0px #9c9c9c;
-    padding: 10px;
+    box-shadow: 4px 9px 20px 0px #00000033;
+    color: #1C1C1C;
+    font-size: 14px;
+    padding: 20px;
     margin: 0 auto;
     transform: scale(1);
-    transition: all 0.2s linear;
+    transition: all 0.2s linear; 
 
     &:hover {
-        background-color: var(--background-color--white_grey-light);
-        box-shadow: 0px 0px 15px #9c9c9c;
+        background-color: #f1f1f1;
+        box-shadow: 4px 9px 20px 0px #00000033;
         transform: scale(1.02);
     }
 
@@ -28,20 +28,54 @@
     }
 
     &__day {
-        font-size: 20px;
-        font-weight: 400;
-        margin-bottom: 15px;
+        color: #1C1C1C;
+        font-size: 24px;
+        font-weight: 500;
     }
 
     &__img {
-        color: #74EEFF;
-        font-size: 130px;
-        border-radius: 40%;
-        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 12220px;
     }
-    
+
     &__celsia {
-        font-size: 32px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 95%;
+        color: #1C1C1C;
+        margin: 0 auto;
         margin-bottom: 15px;
+
+        &_max {
+            font-size: 28px;
+            font-weight: 600;
+        }
+
+        &_min {
+            font-size: 24px;
+            font-weight: 400;
+        }
+    }
+
+    &__info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 14px;
+        font-weight: 300;
+    }
+
+    &__humidity,
+    &__wind {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        p {
+            margin-left: 5px;
+        }
     }
 }

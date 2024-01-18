@@ -1,18 +1,15 @@
 .footer {
-    display: flex;
     width: 100%;
-    height: 60px;
-    color: var(--text-color--white);
-    background-color: var(--background-color--grey_little-blue);
-    font-family: 'Inter', sans-serif;
-    font-size: 20px;
-    box-shadow: 0px -5px 10px var(--shadows-color);
-    padding: 30px 0 60px 0;
-    margin-top: 100px;
+    background-color: var(--background-color--header_footer);
+    color: var(--text-color);
+    font-size: 12px;
+    font-weight: 400;
+    padding: 22px 0;
+    margin-top: 50px;
     transition: all 0.2s linear;
 
     a {
-        color: #97afff;
+        color: #F2FFA4;
         text-decoration: underline;
     }
 

@@ -1,108 +1,66 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 @import "./icons/icons/owfont-regular.css";
 @import "./base/nule.scss";
 @import "./pages/WeatherDay.scss";
+@import "./pages/WeatherInfo.scss";
 @import "./pages/Auth.scss";
 @import "./pages/Profile.scss";
 
 :root {
-    --text-color--white: #ffffff;
-    --text-color--black: #1C1C1C;
-    --text-color--red: #ff0000;
-    --text-color--dark_blue: #233B90;
+    --text-color: #ffffff;
 
-    --background-color: #ffffff;
-    --background-color--grey_little-blue: #5F6A7B;
-    --background-color--white_green: #96ED88;
-    --background-color--white_red: #E9CCCC;
-    --background-color--white_grey: #A7B6CD;
-    --background-color--white_grey-light: #e7ecf3;
+    --background-color: linear-gradient(to bottom right, #75D6FF, #0093D2);
+    --background-color--header_footer: #00000050;
 
-    --background-input-color: #bfc8d8;
-    --background-input-color--white_little-blue: #D9E4E7;
-    --background-input-color--white_little-green: #E3EDCD;
-
-    --shadows-color: #808080;
-
-
-    &[data-theme='light'] {
-        --text-color--white: #ffffff;
-        --text-color--black: #1C1C1C;
-        --text-color--red: #ff0000;
-        --text-color--dark_blue: #233B90;
-
-        --background-color: #e9e9e9;
-        --background-color--grey_little-blue: #5F6A7B;
-        --background-color--white_green: #96ED88;
-        --background-color--white_red: #E9CCCC;
-        --background-color--white_grey: #A7B6CD;
-        --background-color--white_grey-light: #e7ecf3;
-    
-        --background-input-color: #bfc8d8;
-        --background-input-color--white_little-blue: #c7c7c7;
-        --background-input-color--white_little-green: #b6ff8e;
-    
-        --shadows-color: #808080;
-    }
-
-    &[data-theme='dark'] {
-        --text-color--white: #ffffff;
-        --text-color--black: #ffffff;
-        --text-color--red: #ff0000;
-        --text-color--dark_blue: #3762ff;
-
-        --background-color: #33353c;
-        --background-color--grey_little-blue: #5F6A7B;
-        --background-color--white_green: #285f1f;
-        --background-color--white_red: #724242;
-        --background-color--white_grey: #6a7482;
-        --background-color--white_grey-light: #aaaeb3;
-    
-        --background-input-color: #818792;
-        --background-input-color--white_little-blue: #D9E4E7;
-        --background-input-color--white_little-green: #5a9a37;
-    
-        --shadows-color: #51515155;
-    }
+    --background-input-color: rgba(255, 255, 255, 0.80);
 }
 
-body {
-    background-color: var(--background-color);
-    transition: all 0.2s linear;
+html {
+    background: no-repeat var(--background-color);
+    background-size: 100%;
 }
 
 .container {
-    width: 85%;
-    max-width: 1200px;
+    width: 90%;
+    max-width: 1440px;
     margin: 0 auto;
 }
 
 .content {
-    font-family: 'Inter', sans-serif;
-    min-height: calc(100vh - 310px);
+    min-height: calc(100vh - 218px);
 }
 
-.main {
-    color: var(--text-color-dark);
 
-    &__city {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: var(--text-color--black);
-        font-size: 32px;
-        margin: 0 auto;
-        margin-bottom: 30px;
-        transition: all 0.2s linear;
-    }
 
-    &__cards {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 10px;
-        padding: 0 20px;
-    }
+.c-600 {
+    color: #00ffff99;
+}
+.c-601 {
+    color: #00e3e399;
+}
+.c-602 {
+    color: #00bebe99;
+}
+.c-800 {
+    color: #eaff0099;
+}
+.c-801 {
+    color: #00e5ff99;
+}
+.c-500,
+.c-802 {
+    color: #00aaff99;
+}
+.c-501,
+.c-803 {
+    color: #0084ff99;
+}
+.c-502,
+.c-804 {
+    color: #0062ff99;
+}
+.owf {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 120px;
 }

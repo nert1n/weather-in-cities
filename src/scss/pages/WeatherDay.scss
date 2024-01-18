@@ -2,8 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Inter', sans-serif;
-    color: var(--text-color--black);
+    color: var(--text-color);
     font-size: 32px;
     margin: 0 auto;
     transition: all 0.2s linear;
@@ -16,7 +15,7 @@
         gap: 10px;
         margin-top: 50px;
     }
-    
+
     p {
         display: flex;
         justify-content: center;

@@ -1,54 +1,42 @@
-import React, { useEffect, useState } from 'react'
-import cl from './WeatherCard.module.scss'
-import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { useFetching } from './../../hooks/useFetching';
-import PostService from './../../API/PostServise';
+import { useTranslation } from 'react-i18next';
+import cl from './WeatherCard.module.scss';
 
 export default function WeatherCard(props) {
-  const city = useSelector((state) => state.city.value);
-  const [weatherInfo, setWeatherInfo] = useState([]);
+  const { t, i18n } = useTranslation();
 
-  const imgURL = `owf owf-${props.weatherInfo.length > 0 ? 800 : props.weatherInfo.weather[0].id} owf-5x icon-style`
+  const imgURL = `owf owf-${props.weatherInfo.weather[0].id} owf-5x`;
 
   const ms = props.weatherInfo.dt * 1000;
   const date = new Date(ms);
 
-  let day = date.getDate();
+  const weekday = date.toLocaleString(`${t('en')}`, {weekday: 'long'});
 
-  const year = date.toLocaleString('en', {year: "numeric"});
-  const month = date.toLocaleString('en', {month: "long"});
-  const weekday = date.toLocaleString('en', {weekday: 'long'});
-
-  const dateMonth = new Date(Date.parse(month + " 1, 2000"));
-  const monthNum = dateMonth.getMonth() + 1;
-
-  const [fetchWeather, isWeatherLoading, weatherError] = useFetching( async () => {
-    const weather = await PostService.getAll({city});
-    const dailyData = weather.list.filter((reading) =>
-      reading.dt_txt.includes(`${year}-${monthNum}-${day}`)
-    );
-    setWeatherInfo(dailyData);
-  })
-  
-  useEffect(() => {
-    fetchWeather()
-  }, [])
-
-  const celsiaDay = Math.round(props.weatherInfo.main.temp)
+  console.log('!!! WeatherCard rendered');
 
   return (
-    <Link 
-      className={cl.card} 
-      to={`/weather-in-cities/${city}/${month}/${day}`}
-    > 
-        <i className={`${imgURL} ${cl.card__img}`}/>
-        <p className={cl.card__celsia}>
-          {celsiaDay}°C
+    <div className={cl.card}> 
+      <h3 className={cl.card__day}>
+        {weekday.toUpperCase()}
+      </h3>
+      <i className={`${cl.card__img} c-${props.weatherInfo.weather[0].id} ${imgURL}`}/>
+      <div className={cl.card__celsia}>
+        <p className={cl.card__celsia_max}>
+          {Math.round(props.weatherInfo.main.temp_max)}°C
         </p>
-        <h3 className={cl.card__day}>
-          {weekday.toUpperCase()}
-        </h3>
-    </Link> 
-  )
+        <p className={cl.card__celsia_min}>
+          {Math.round(props.weatherInfo.main.temp_min)}°C
+        </p>
+      </div>
+      <div className={cl.card__info}>
+        <div className={cl.card__humidity}>
+          <img src='img/humindity.svg' alt={t('Img humindity')} />
+          <p>{props.weatherInfo.main.humidity}%</p>
+        </div>
+        <div className={cl.card__wind}>
+          <img src='img/wind.svg' alt={t('Img wind')} />
+          <p>{Math.round(props.weatherInfo.wind.speed)}{t('km/h')}</p>
+        </div>
+      </div>
+    </div> 
+  );
 }

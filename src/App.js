@@ -1,37 +1,37 @@
+import { createContext, useEffect } from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import './scss/style.scss'
+import { useTranslation } from 'react-i18next';
+import { useFetching } from './hooks/useFetching';
+import AppRouter from './components/AppRouter';
 import Header from './components/UI/Header/Header';
 import Footer from './components/UI/Footer/Footer';
-import { createContext, useEffect } from 'react';
-import AppRouter from './components/AppRouter';
-import { useFetching } from './hooks/useFetching';
 import PostService from './API/PostServise';
-import { useTranslation } from 'react-i18next';
+import './scss/style.scss';
 
 export const ConfigContext = createContext();
 
 function App() {
   const { t, i18n } = useTranslation();
 
-  const [fetchIp, isIpLoading, ipError] = useFetching( async () => {
+  const [fetchIp, isIpLoading, ipError] = useFetching(async () => {
     const ip = await PostService.getIp();
-    const country = ip.country.toLowerCase()
+    const country = ip.country.toLowerCase();
 
     i18n.changeLanguage(country);
-  })
+  });
 
   useEffect(() => {
-    fetchIp()
-  }, [])
+    fetchIp();
+  });
 
   return (
-    <div className="App">
+    <div className='App'>
       <BrowserRouter>
-        <Header/>
+        <Header />
 
-        <AppRouter/>
+        <AppRouter />
 
-        <Footer/>
+        <Footer />
       </BrowserRouter>
     </div>
   );

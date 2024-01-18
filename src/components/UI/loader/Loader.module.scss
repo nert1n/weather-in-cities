@@ -2,9 +2,9 @@
     width: 150px;
     height: 150px;
     border-radius: 100%;    
-    border: 8px dashed var(--text-color--black);
+    border: 8px dashed #1C1C1C;
     animation: rotate 2.5s infinite linear;
-    
+
     &__holder{
         display: flex;
         justify-content: center;

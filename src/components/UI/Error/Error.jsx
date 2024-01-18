@@ -1,18 +1,18 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
-import cl from './Error.module.scss'
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
+import cl from './Error.module.scss';
 
 export default function Error() {
-  document.title = `WISICO - Error`
-
+  document.title = 'WISICO - Error';
   const { t, i18n } = useTranslation();
 
+  console.log('!!! Error rendered');
+
   return (
-    <div className={cl.error}>
+    <main className={cl.error}>
       <h1>{t('Error')} 404</h1>
       <h2>{t('Page not found')}</h2>
-      <Link to='/weather-in-cities/'>{t('Return back')}</Link>
-    </div>
-  )
+      <Link to='/weather-in-cities/' title={t('Button return back')}>{t('Return back')}</Link>
+    </main>
+  );
 }
