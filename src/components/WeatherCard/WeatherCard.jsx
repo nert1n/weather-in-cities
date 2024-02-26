@@ -9,16 +9,14 @@ export default function WeatherCard(props) {
   const ms = props.weatherInfo.dt * 1000;
   const date = new Date(ms);
 
-  const weekday = date.toLocaleString(`${t('en')}`, {weekday: 'long'});
-
-  console.log('!!! WeatherCard rendered');
+  const weekday = date.toLocaleString(`${t('en')}`, { weekday: 'long' });
 
   return (
-    <div className={cl.card}> 
-      <h3 className={cl.card__day}>
-        {weekday.toUpperCase()}
-      </h3>
-      <i className={`${cl.card__img} c-${props.weatherInfo.weather[0].id} ${imgURL}`}/>
+    <div className={cl.card}>
+      <h3 className={cl.card__day}>{weekday.toUpperCase()}</h3>
+      <i
+        className={`${cl.card__img} c-${props.weatherInfo.weather[0].id} ${imgURL}`}
+      />
       <div className={cl.card__celsia}>
         <p className={cl.card__celsia_max}>
           {Math.round(props.weatherInfo.main.temp_max)}°C
@@ -34,9 +32,12 @@ export default function WeatherCard(props) {
         </div>
         <div className={cl.card__wind}>
           <img src='img/wind.svg' alt={t('Img wind')} />
-          <p>{Math.round(props.weatherInfo.wind.speed)}{t('km/h')}</p>
+          <p>
+            {Math.round(props.weatherInfo.wind.speed)}
+            {t('km/h')}
+          </p>
         </div>
       </div>
-    </div> 
+    </div>
   );
 }

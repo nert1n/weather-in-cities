@@ -25,11 +25,15 @@
         display: flex;
         justify-content: start;
         align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 25px;
 
         &-info {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
         }
     }
 
@@ -82,7 +86,7 @@
         align-items: center;
         font-size: 16px;
         font-weight: 400;
-        margin-right: 25px;
+        margin: 0 auto;
 
         &-icon {
             margin-right: 10px;
@@ -99,5 +103,13 @@
         align-items: center;
         flex-wrap: wrap;
         gap: 10px;
+    }
+}
+
+@media (max-width: 500px) {
+    .main {
+        &__item {
+            justify-content: center;
+        }
     }
 }

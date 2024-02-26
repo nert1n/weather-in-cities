@@ -16,20 +16,20 @@ export default function WeatherDayPage(props) {
   const params = useParams();
 
   let day = params.day;
-  
+
   if (day < 10) {
     day = `0${day}`;
   }
 
   const date = new Date(Date.parse(params.month + ' 1, 2000'));
   const monthEn = date.getMonth() + 1;
-  let month = date.toLocaleString(`${t('en')}`, {month: 'long'});
-  let weekday = date.toLocaleString(`${t('en')}`, {weekday: 'long'});
+  let month = date.toLocaleString(`${t('en')}`, { month: 'long' });
+  let weekday = date.toLocaleString(`${t('en')}`, { weekday: 'long' });
 
   function firstTop(params) {
     const splitted = params.split('');
     const first = splitted[0].toUpperCase();
-    const rest = [...splitted]; 
+    const rest = [...splitted];
     rest.splice(0, 1);
     const latest = [first, ...rest].join('');
 
@@ -38,43 +38,43 @@ export default function WeatherDayPage(props) {
 
   month = firstTop(month);
   weekday = firstTop(weekday);
-  const [fetchWeather, isWeatherLoading, weatherError] = useFetching( async () => {
-    const weather = await PostService.getAll({city});
-    const dailyData = weather.list.filter((reading) =>
-      reading.dt_txt.includes(`${monthEn}-${day}`)
-    );
-    setWeatherInfo(dailyData);
-  });
+  const [fetchWeather, isWeatherLoading, weatherError] = useFetching(
+    async () => {
+      const weather = await PostService.getAll({ city });
+      const dailyData = weather.list.filter((reading) =>
+        reading.dt_txt.includes(`${monthEn}-${day}`),
+      );
+      setWeatherInfo(dailyData);
+    },
+  );
 
   useEffect(() => {
     fetchWeather();
   }, []);
-  console.log('!!! WeatherDayPage rendered');
 
   return (
     <main className='day'>
-      {isWeatherLoading
-        ? <Loader/>
-        :  
+      {isWeatherLoading ? (
+        <Loader />
+      ) : (
         <>
-          {isWeatherLoading
-            ? <Error/>
-            : 
+          {isWeatherLoading ? (
+            <Error />
+          ) : (
             <div className='container'>
-              <p>{month} {params.day}</p>
+              <p>
+                {month} {params.day}
+              </p>
               <p>{weekday}</p>
-              <div className='day__holder'> 
+              <div className='day__holder'>
                 {weatherInfo.map((el, index) => (
-                  <WeatherCardDay
-                    key={index}
-                    weatherInfo={el}
-                  />
+                  <WeatherCardDay key={index} weatherInfo={el} />
                 ))}
               </div>
             </div>
-          }
+          )}
         </>
-      }
+      )}
     </main>
   );
 }

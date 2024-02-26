@@ -6,13 +6,13 @@ export default function Error() {
   document.title = 'WISICO - Error';
   const { t, i18n } = useTranslation();
 
-  console.log('!!! Error rendered');
-
   return (
     <main className={cl.error}>
       <h1>{t('Error')} 404</h1>
       <h2>{t('Page not found')}</h2>
-      <Link to='/weather-in-cities/' title={t('Button return back')}>{t('Return back')}</Link>
+      <Link to='/weather-in-cities/' title={t('Button return back')}>
+        {t('Return back')}
+      </Link>
     </main>
   );
 }

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { privateRoutes } from '../router';
@@ -7,18 +6,16 @@ import Error from './UI/Error/Error';
 
 export default function AppRouter() {
   const isAuth = useSelector((state) => state.auth.value);
-  console.log('!!! AppRouter rendered');
 
   return (
     <div className='content'>
-      {isAuth
-        ?
+      {isAuth ? (
         <Routes>
           {privateRoutes.map((route) => (
             <Route
               key={route.path}
               path={route.path}
-              element={<route.component title={route.title}/>}
+              element={<route.component title={route.title} />}
               exact={route.exact}
             />
           ))}
@@ -32,19 +29,19 @@ export default function AppRouter() {
             element={<Navigate to='/weather-in-cities/' replace />}
           />
         </Routes>
-        : 
+      ) : (
         <Routes>
           {publicRoutes.map((route) => (
             <Route
               key={route.path}
               path={route.path}
-              element={<route.component title={route.title}/>}
+              element={<route.component title={route.title} />}
               exact={route.exact}
             />
           ))}
           <Route path='*' element={<Error />} />
         </Routes>
-      }
+      )}
     </div>
   );
 }

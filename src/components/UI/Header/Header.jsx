@@ -15,7 +15,6 @@ export default function Header() {
   const [isActive, setIsActive] = useState(false);
   const [city, setCity] = useState();
 
-
   const languageChange = (e) => {
     i18n.changeLanguage(e.target.value);
   };
@@ -28,14 +27,11 @@ export default function Header() {
     dispatch(syncState(city));
   };
 
-
   useEffect(() => {
     if (i18n.options.resources[i18n.language] != undefined) {
       document.getElementById('selectLang').value = i18n.language;
     }
   }, [i18n.language]);
-
-  console.log('!!! Header rendered');
 
   return (
     <div className={cl.header}>
@@ -46,11 +42,12 @@ export default function Header() {
             title='WISICO'
             to='/weather-in-cities/'
           >
-            <i className='owf owf-804 owf-2x icon-style'/>WISICO
+            <i className='owf owf-804 owf-2x icon-style' />
+            WISICO
           </Link>
           <div className={cl.header__input}>
             <button onClick={handleCityChange} title={t('Search button')}>
-              <img src='img/Magnifier.svg' alt={t('Img magnifier')}/>
+              <img src='img/Magnifier.svg' alt={t('Img magnifier')} />
             </button>
             <input
               type='text'
@@ -60,7 +57,11 @@ export default function Header() {
               ref={nodeRef}
               value={city}
               onChange={handleCitySave}
-              onKeyDown={(e) => {if (e.key === 'Enter') {handleCityChange(city);}}}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  handleCityChange(city);
+                }
+              }}
             />
           </div>
           <div className={`${cl.header__nav} ${isActive ? cl.active : ''}`}>
@@ -75,30 +76,33 @@ export default function Header() {
               <option value='en'>EN</option>
               <option value='ua'>UA</option>
             </select>
-            {isAuth == false
-              ?<Link
+            {isAuth == false ? (
+              <Link
                 className={cl.header__auth}
                 title={t('Button login')}
                 to='/weather-in-cities/login'
               >
                 {t('Login')}
               </Link>
-              : <Link
+            ) : (
+              <Link
                 className={cl.header__auth}
                 title={t('Button profile')}
                 to='/weather-in-cities/profile'
               >
                 <img src='img/user_profile_avatar.svg' alt={t('Profile')} />
               </Link>
-            }
+            )}
           </div>
           <div className={cl.header__burger}>
             <button onClick={handleCityChange} title={t('Search button')}>
-              <img src='img/Magnifier_white.svg' alt={t('Img magnifier')}/>
+              <img src='img/Magnifier_white.svg' alt={t('Img magnifier')} />
             </button>
-            <div 
+            <div
               className={`${cl.burger} ${isActive ? cl.active : ''}`}
-              onClick={() => {setIsActive(!isActive);}}
+              onClick={() => {
+                setIsActive(!isActive);
+              }}
             >
               <span></span>
             </div>

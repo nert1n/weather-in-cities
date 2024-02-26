@@ -22,7 +22,7 @@ function App() {
 
   useEffect(() => {
     fetchIp();
-  });
+  }, []);
 
   return (
     <div className='App'>

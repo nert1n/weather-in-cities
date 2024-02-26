@@ -8,35 +8,36 @@ const en = {
     'Button profile': 'Button profile',
     'Search button': 'Search button',
     'To come in': 'Login',
-    'Profile': 'Profile',
+    Profile: 'Profile',
 
     // Footer
-    'Button to go to the creator\'s GitHub': 'Button to go to the creator\'s GitHub',
+    "Button to go to the creator's GitHub":
+      "Button to go to the creator's GitHub",
     'Powered by': 'Powered by',
 
     // Error
     'Page not found': 'Page not found',
     'Return back': 'Return back',
     'Button return back': 'Button return back',
-    'Error': 'Error',
+    Error: 'Error',
 
     // Register & login
-    'Email': 'Email',
-    'Password': 'Password',
+    Email: 'Email',
+    Password: 'Password',
     'Input email': 'Input email',
     'Input password': 'Input password',
 
     // Login
-    'Login': 'Login',
+    Login: 'Login',
     'To come in': 'Login',
-    'I don\'t have an account': 'I have an account',
+    "I don't have an account": 'I have an account',
     'Forgot password': 'Forgot password',
-    'Button i don\'t have an account': 'Button i don\'t have an account',
+    "Button i don't have an account": "Button i don't have an account",
     'Button to come in': 'Button to come in',
     'Button forgot password': 'Button forgot password',
 
     // Register
-    'Register': 'Register',
+    Register: 'Register',
     'Agree password': 'Agree password',
     'I have an account': 'I have an account',
     'Button i have an account': 'Button i have an account',
@@ -46,15 +47,28 @@ const en = {
 
     // Profile
     'My profile': 'My profile',
-    'Exit': 'Exit',
+    Exit: 'Exit',
     'Profile image': 'Profile image',
     'Button exit': 'Button exit',
 
     // WeatherCard
-    'en': 'en',
+    en: 'en',
     'km/h': 'km/h',
     'Img humindity': 'Img humindity',
     'Img wind': 'Img wind',
+
+    // WeatherNow
+    'Img feel like': 'Img feel like',
+    'Feel like': 'Feel like',
+    Wind: 'Wind',
+    'Img visibility': 'Img visibility',
+    ' Visibility': 'Visibility',
+    'Img humidity': 'Img humidity',
+    Humidity: 'Humidity',
+    'Img pressure': 'Img pressure',
+    ' Pressure': 'Pressure',
+    'Img sea level': 'Img sea level',
+    'Sea level': 'Sea level',
   },
 };
 
