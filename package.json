@@ -1,9 +1,60 @@
 {
-  "name": "weather-info",
-  "version": "0.7",
-  "private": true,
-  "homepage": "https://nert1n.github.io/weather-in-cities/",
-  "dependencies": {
+  "name": "weather-in-cities",
+  "version": "0.7.1",
+  "private": false,
+  "homepage": ".",
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint -c .eslintrc --ext .js,.jsx .",
+    "lint:fix": "npm run lint -- --fix"
+  },
+    "author": {
+    "name": "nert1n",
+    "email": "dymufa@gmail.com",
+    "url": "https://github.com/nert1n/"
+  },
+  "contributors": [
+    {
+      "name": "nert1n",
+      "email": "dymufa@gmail.com",
+      "url": "https://github.com/nert1n/"
+    }
+  ],
+  "bugs": "https://github.com/nert1n/weather-in-cities/issues",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "javascript",
+    "webpack",
+    "weather",
+    "weather check"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nert1n/weather-in-cities.git"
+  },
+  "engines": {
+    "node": ">= 20.0.0",
+    "npm": ">= 9.0.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+    "dependencies": {
     "@reduxjs/toolkit": "^2.0.1",
     "@testing-library/jest-dom": "^6.2.0",
     "@testing-library/react": "^14.1.2",
@@ -19,28 +70,6 @@
     "react-scripts": "5.0.1",
     "react-transition-group": "^4.4.5",
     "web-vitals": "^3.5.1"
-  },
-  "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "lint": "eslint -c .eslintrc --ext .js,.jsx .",
-    "lint:fix": "npm run lint -- --fix"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
   },
   "devDependencies": {
     "gh-pages": "^6.1.1"

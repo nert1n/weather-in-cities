@@ -2,13 +2,17 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
-export default function WeatherNow(props) {
+export default function WeatherNow({ weatherInfo }) {
   const { t, i18n } = useTranslation();
   const city = useSelector((state) => state.city.value);
 
-  const [weatherInfo, setWeatherInfo] = useState(props.weatherInfo[0]);
+  if (!weatherInfo.length) {
+    return (
+        <h1 className="posts__head head">Not found!</h1>
+    )
+  }
 
-  const imgURL = `owf owf-${weatherInfo.weather[0].id} owf-5x`;
+  const imgURL = `owf owf-${weatherInfo[0].weather[0].id} owf-5x`;
 
   return (
     <div className='main__info'>
@@ -18,16 +22,16 @@ export default function WeatherNow(props) {
           <div className='main__weather'>
             <i className={`${imgURL} main__icon`}></i>
             <div className='main__temperature'>
-              <p className='main__temp'>{Math.round(weatherInfo.main.temp)}</p>
+              <p className='main__temp'>{Math.round(weatherInfo[0].main.temp)}</p>
               <p className='main__celsia'>°C</p>
             </div>
           </div>
           <div className='main__weather-info'>
             <h3 className='main__weather-title'>
-              {weatherInfo.weather[0].main.toUpperCase()}
+              {weatherInfo[0].weather[0].main.toUpperCase()}
             </h3>
             <p className='main__weather-description'>
-              {weatherInfo.weather[0].description}
+              {weatherInfo[0].weather[0].description}
             </p>
           </div>
         </div>
@@ -41,7 +45,7 @@ export default function WeatherNow(props) {
             <div className='main__item-like-info'>
               <p className='main__item-like-label'>{t('Feel like')}</p>
               <p className='main__item-like-temperature'>
-                {Math.round(weatherInfo.main.feels_like)}°
+                {Math.round(weatherInfo[0].main.feels_like)}°
               </p>
             </div>
           </div>
@@ -54,7 +58,7 @@ export default function WeatherNow(props) {
             <div className='main__item-like-info'>
               <p className='main__item-like-label'>{t('Wind')}</p>
               <p className='main__item-like-temperature'>
-                {Math.round(weatherInfo.wind.speed)}
+                {Math.round(weatherInfo[0].wind.speed)}
                 {t('km/h')}
               </p>
             </div>
@@ -68,7 +72,7 @@ export default function WeatherNow(props) {
             <div className='main__item-like-info'>
               <p className='main__item-like-label'>{t('Visibility')}</p>
               <p className='main__item-like-temperature'>
-                {Math.round(weatherInfo.visibility) / 1000}
+                {Math.round(weatherInfo[0].visibility) / 1000}
                 {t('km')}
               </p>
             </div>
@@ -82,7 +86,7 @@ export default function WeatherNow(props) {
             <div className='main__item-like-info'>
               <p className='main__item-like-label'>{t('Humidity')}</p>
               <p className='main__item-like-temperature'>
-                {Math.round(weatherInfo.main.humidity)}
+                {Math.round(weatherInfo[0].main.humidity)}
               </p>
             </div>
           </div>
@@ -95,7 +99,7 @@ export default function WeatherNow(props) {
             <div className='main__item-like-info'>
               <p className='main__item-like-label'>{t('Pressure')}</p>
               <p className='main__item-like-temperature'>
-                {Math.round(weatherInfo.main.pressure)}
+                {Math.round(weatherInfo[0].main.pressure)}
                 {t('mb')}
               </p>
             </div>
@@ -109,7 +113,7 @@ export default function WeatherNow(props) {
             <div className='main__item-like-info'>
               <p className='main__item-like-label'>{t('Sea level')}</p>
               <p className='main__item-like-temperature'>
-                {Math.round(weatherInfo.main.sea_level)}
+                {Math.round(weatherInfo[0].main.sea_level)}
               </p>
             </div>
           </div>

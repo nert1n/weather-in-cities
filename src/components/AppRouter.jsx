@@ -15,7 +15,7 @@ export default function AppRouter() {
             <Route
               key={route.path}
               path={route.path}
-              element={<route.component title={route.title} />}
+              element={<route.component />}
               exact={route.exact}
             />
           ))}

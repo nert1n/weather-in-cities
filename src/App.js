@@ -17,11 +17,11 @@ function App() {
     const ip = await PostService.getIp();
     const country = ip.country.toLowerCase();
 
-    i18n.changeLanguage(country);
+    await i18n.changeLanguage(country);
   });
 
   useEffect(() => {
-    fetchIp();
+    fetchIp()
   }, []);
 
   return (
