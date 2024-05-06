@@ -14,7 +14,7 @@ const AuthButton = () => {
 				className={cl.header__auth}
 				title={t('Button profile')}
 				to="/profile">
-				<img src="/img/user_profile_avatar.svg" alt={t('Profile')} />
+				<img src="./img/user_profile_avatar.svg" alt={t('Profile')} />
 			</Link>
 		);
 	}
