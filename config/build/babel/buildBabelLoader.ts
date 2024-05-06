@@ -5,7 +5,7 @@ export function buildBabelLoader(options: BuildOptions) {
     test: /\.tsx?$/,
     exclude: /node_modules/,
     use: {
-      loader: "babel-loader",
+      loader: "babel-Loader",
     }
   }
 }

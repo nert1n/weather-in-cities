@@ -13,7 +13,7 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
     }
 
     const cssLoadersWithModule = {
-        loader: "css-loader",
+        loader: "css-Loader",
     }
 
     const svgrLoader = {
@@ -41,9 +41,9 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
     const scssLoader = {
         test: /\.s[ac]ss$/i,
         use: [
-        isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+        isDev ? 'style-Loader' : MiniCssExtractPlugin.loader,
         cssLoadersWithModule,
-        "sass-loader",
+        "sass-Loader",
         ],
     }
 

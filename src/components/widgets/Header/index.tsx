@@ -1,17 +1,16 @@
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { syncState } from '@/redux/slices/citySlice';
 import cl from './Header.module.scss';
 import SelectLang from '@/components/ui/SelectLang';
+import AuthButton from '@/components/ui/AuthButton';
 
-export default function Header() {
+const Header = () => {
 	const { t } = useTranslation();
 	const dispatch = useDispatch();
 	const nodeRef = useRef(null);
-
-	const isAuth = useSelector((state: any) => state.auth.value);
 
 	const [isActive, setIsActive] = useState(false);
 	const [city, setCity] = useState('');
@@ -55,21 +54,7 @@ export default function Header() {
 					</div>
 					<div className={`${cl.header__nav} ${isActive ? cl.active : ''}`}>
 						<SelectLang />
-						{isAuth == false ? (
-							<Link
-								className={cl.header__auth}
-								title={t('Button login')}
-								to="/weather-in-cities/login">
-								{t('Login')}
-							</Link>
-						) : (
-							<Link
-								className={cl.header__auth}
-								title={t('Button profile')}
-								to="/weather-in-cities/profile">
-								<img src="/img/user_profile_avatar.svg" alt={t('Profile')} />
-							</Link>
-						)}
+						<AuthButton />
 					</div>
 					<div className={cl.header__burger}>
 						<button
@@ -77,16 +62,18 @@ export default function Header() {
 							title={t('Search button')}>
 							<img src="/img/Magnifier_white.svg" alt={t('Img magnifier')} />
 						</button>
-						<div
+						<button
 							className={`${cl.burger} ${isActive ? cl.active : ''}`}
 							onClick={() => {
 								setIsActive(!isActive);
 							}}>
 							<span></span>
-						</div>
+						</button>
 					</div>
 				</div>
 			</div>
 		</div>
 	);
-}
+};
+
+export default Header;

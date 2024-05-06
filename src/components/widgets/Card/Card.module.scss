@@ -37,7 +37,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 12220px;
+        font-size: 120px;
     }
 
     &__celsia {
@@ -46,8 +46,7 @@
         align-items: center;
         width: 95%;
         color: #1C1C1C;
-        margin: 0 auto;
-        margin-bottom: 15px;
+        margin: 0 auto 15px;
 
         &_max {
             font-size: 28px;
