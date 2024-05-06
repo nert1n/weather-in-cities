@@ -35,7 +35,7 @@ const Header = () => {
 						<button
 							onClick={() => handleCityChange()}
 							title={t('Search button')}>
-							<img src="/img/Magnifier.svg" alt={t('Img magnifier')} />
+							<img src="./img/Magnifier.svg" alt={t('Img magnifier')} />
 						</button>
 						<input
 							type="text"
