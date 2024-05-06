@@ -1,0 +1,65 @@
+{
+    "env": {
+        "browser": true,
+        "node": true,
+        "jest": true
+    },
+    "globals": {
+        "document": false
+    },
+    "extends": [
+        "plugin:react/jsx-runtime",
+        "plugin:react-hooks/recommended",
+        "plugin:jsx-a11y/recommended",
+        "plugin:import/recommended"
+    ],
+    "rules": {
+        "semi": ["error", "always"],
+        "quotes": ["error", "single"],
+        "jsx-quotes": ["error", "prefer-double"],
+        "object-curly-spacing": ["warn", "always"],
+        "comma-dangle": ["off", "always"],
+        "arrow-parens": ["warn", "as-needed"],
+        "no-tabs": "off",
+        "no-undef": ["error"],
+        "linebreak-style": ["off", "windows"],
+        "react/react-in-jsx-scope": "off",
+        "react-hooks/exhaustive-deps": "off",
+        "import/extensions": "off",
+        "camelcase": "off",
+        "import/order": "off",
+        "no-shadow": "off",
+        "react/jsx-no-bind": "off",
+        "react/jsx-props-no-spreading": "off",
+        "no-unused-expressions": "off",
+        "react/jsx-filename-extension": [
+            "error",
+            {
+                "extensions": [
+                    ".tsx"
+                ]
+            }
+        ],
+        "react/function-component-definition": "off",
+        "no-plusplus": "off"
+    },
+    "settings": {
+        "import/resolver": {
+            "typescript": {}
+        }
+    },
+    "parser": "@typescript-eslint/parser",
+    "overrides": [
+        {
+            "files": [
+                "*.js",
+                "*.jsx",
+                "*.ts",
+                "*.tsx"
+            ],
+            "extends": [
+                "plugin:prettier/recommended"
+            ]
+        }
+    ]
+}

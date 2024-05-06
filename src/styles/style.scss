@@ -1,0 +1,62 @@
+@import "icons/icons/owfont-regular.css";
+@import "base/nule";
+
+:root {
+    --text-color: #ffffff;
+
+    --background-color: linear-gradient(to bottom right, #59cdff, #0080b7);
+    --background-color--header_footer: #00000050;
+
+    --background-input-color: rgba(255, 255, 255, 0.80);
+}
+
+html {
+    background: no-repeat var(--background-color);
+    background-size: 100%;
+}
+
+.container {
+    width: 90%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.content {
+    min-height: calc(100vh);
+}
+
+
+
+.c-600 {
+    color: #00ffff99;
+}
+.c-601 {
+    color: #00e3e399;
+}
+.c-602 {
+    color: #00bebe99;
+}
+.c-800 {
+    color: #eaff0099;
+}
+.c-801 {
+    color: #00e5ff99;
+}
+.c-500,
+.c-802 {
+    color: #00aaff99;
+}
+.c-501,
+.c-803 {
+    color: #0084ff99;
+}
+.c-502,
+.c-804 {
+    color: #0062ff99;
+}
+.owf {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 120px;
+}

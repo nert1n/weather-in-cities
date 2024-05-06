@@ -1,0 +1,27 @@
+.main {
+    color: var(--text-color);
+    transition: all 0.2s linear;
+
+    &__title {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        color: var(--text-color);
+        font-size: 24px;
+        font-weight: 600;
+        margin: 0 auto 30px auto;
+    }
+
+    h1 {
+        font-size: 32px;
+        font-weight: 900;
+    }
+
+    &__cards {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
