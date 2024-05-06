@@ -28,7 +28,7 @@ const MainInfo = ({ weatherInfo }: IMainInfo) => {
 	const city = useSelector((state: any) => state.city.value);
 
 	if (!weatherInfo) {
-		return <h1 className="posts__head head">Not found!</h1>;
+		return <h1>Not found!</h1>;
 	}
 
 	const imgURL = `owf owf-${weatherInfo.weather[0].id} owf-5x`;

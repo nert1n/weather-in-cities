@@ -1,43 +1,49 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { useFetching } from '@/hooks/useFetching';
 import MainService from '@/services/main.service';
 import cl from './MainPage.module.scss';
 import Card from '@/components/widgets/Card';
 import MainInfo from '@/components/widgets/MainInfo';
-import Loader from '@/components/widgets/Loader';
+import { useQuery, useQueryClient } from '@tanstack/react-query';
+import Loader from '@/components/ui/Loader';
 
 function MainPage() {
 	const { i18n } = useTranslation();
 	const city = useSelector((state: any) => state.city.value);
-
 	const [weatherInfo, setWeatherInfo] = useState([]);
 	const [time, setTime] = useState(21);
 	const language = i18n.language;
 
-	const [fetchWeather, isWeatherLoading, weatherError] = useFetching(
-		async () => {
-			const response = await MainService.getAll(city, language);
-			const dailyData = response.list.filter((reading: { dt_txt: string }) =>
-				reading.dt_txt.includes(`${time}:00:00`),
-			);
-			setWeatherInfo(dailyData);
-			return;
-		},
-	);
+	const queryClient = useQueryClient();
+
+	const { data, isLoading, isError, isFetching } = useQuery({
+		queryKey: ['getAll'],
+		queryFn: () => MainService.getAll(city, language),
+	});
 
 	useEffect(() => {
-		// @ts-ignore
-		fetchWeather();
-	}, [city, time, language]);
+		if (city.trim() !== '') {
+			queryClient.invalidateQueries({ queryKey: ['getAll'] });
+		}
+	}, [city, time, language, queryClient]);
 
-	if (isWeatherLoading) {
-		return <Loader />;
+	useEffect(() => {
+		if (data) {
+			const dailyData = data.list.filter(
+				(reading: { dt_txt: string | string[] }) =>
+					reading.dt_txt.includes(`${time}:00:00`),
+			);
+			setWeatherInfo(dailyData);
+		}
+	}, [data, time]);
+
+	if (isError) {
+		return <h1 className={cl.main__notfound}>Not found!</h1>;
 	}
 
-	if (weatherError) {
-		return <p>City not fined</p>;
+	if (isLoading || isFetching) {
+		return <Loader />;
 	}
 
 	return (

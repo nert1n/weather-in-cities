@@ -2,6 +2,15 @@
     color: var(--text-color);
     transition: all 0.2s linear;
 
+    &__notfound {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 32px;
+        font-weight: bold;
+        color: white;
+    }
+
     &__title {
         display: flex;
         justify-content: left;

@@ -1,8 +1,10 @@
 .loader {
     width: 150px;
     height: 150px;
-    border-radius: 100%;    
-    border: 8px dashed #1C1C1C;
+    border-radius: 80%;
+    border: 8px dashed #ffffff;
+    box-shadow: 0px 0px 1px #1C1C1C;
+
     animation: rotate 2.5s infinite linear;
 
     &__holder{
@@ -17,7 +19,10 @@
     from {
         transform: rotate(0deg) scale(1);
     }
+    50% {
+        transform: rotate(360deg) scale(1.2)
+    }
     to {
-        transform: rotate(360deg) scale(1.2);
+        transform: rotate(0deg) scale(1);
     }
 }

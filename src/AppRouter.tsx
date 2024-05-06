@@ -2,65 +2,73 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { publicRoutes, privateRoutes } from '@/routes/routes';
 import '@/styles/style.scss';
-import Error from '@/components/widgets/Error';
 import Footer from '@/components/widgets/Footer';
 import Header from '@/components/widgets/Header';
 import { useTranslation } from 'react-i18next';
-import { useFetching } from '@/hooks/useFetching';
 import { useEffect } from 'react';
 import MainService from '@/services/main.service';
+import { useQuery } from '@tanstack/react-query';
+import Error from '@/components/ui/Error';
+import Loader from '@/components/ui/Loader';
 
 function AppRouter() {
 	const { i18n } = useTranslation();
 	const isAuth = useSelector((state: any) => state.auth.value);
-
-	const [fetchIp, isIpLoading, ipError] = useFetching(async () => {
-		const country = await MainService.getCountry();
-
-		i18n.changeLanguage(country);
+	const { data, isLoading, isError, isFetched } = useQuery({
+		queryKey: ['getCountry'],
+		queryFn: () => MainService.getCountry(),
 	});
 
 	useEffect(() => {
-		// @ts-ignore
-		fetchIp();
-	}, []);
+		i18n.changeLanguage(data);
+	}, [data]);
+
+	if (isError) {
+		return <p>Error!</p>;
+	}
+
+	if (isLoading) {
+		return <Loader />;
+	}
 
 	return (
-		<div className="content">
+		<>
 			<Header />
-			{isAuth ? (
-				<Routes>
-					{privateRoutes.map(route => (
+			<div className="content">
+				{isAuth ? (
+					<Routes>
+						{privateRoutes.map(route => (
+							<Route
+								key={route.path}
+								path={route.path}
+								element={<route.component />}
+							/>
+						))}
+						<Route path="*" element={<Error />} />
 						<Route
-							key={route.path}
-							path={route.path}
-							element={<route.component />}
+							path="/weather-in-cities/login"
+							element={<Navigate to="/weather-in-cities/" replace />}
 						/>
-					))}
-					<Route path="*" element={<Error />} />
-					<Route
-						path="/weather-in-cities/login"
-						element={<Navigate to="/weather-in-cities/" replace />}
-					/>
-					<Route
-						path="/weather-in-cities/register"
-						element={<Navigate to="/weather-in-cities/" replace />}
-					/>
-				</Routes>
-			) : (
-				<Routes>
-					{publicRoutes.map(route => (
 						<Route
-							key={route.path}
-							path={route.path}
-							element={<route.component />}
+							path="/weather-in-cities/register"
+							element={<Navigate to="/weather-in-cities/" replace />}
 						/>
-					))}
-					<Route path="*" element={<Error />} />
-				</Routes>
-			)}
+					</Routes>
+				) : (
+					<Routes>
+						{publicRoutes.map(route => (
+							<Route
+								key={route.path}
+								path={route.path}
+								element={<route.component />}
+							/>
+						))}
+						<Route path="*" element={<Error />} />
+					</Routes>
+				)}
+			</div>
 			<Footer />
-		</div>
+		</>
 	);
 }
 
