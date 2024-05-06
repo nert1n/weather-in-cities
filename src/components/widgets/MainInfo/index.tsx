@@ -35,37 +35,37 @@ const MainInfo = ({ weatherInfo }: IMainInfo) => {
 
 	const data = [
 		{
-			imgUrl: '/img/feel_like.svg',
+			imgUrl: './img/feel_like.svg',
 			imgAlt: t('Img feel like'),
 			name: t('Feel like'),
 			info: Math.round(weatherInfo.main.feels_like) + '°',
 		},
 		{
-			imgUrl: '/img/wind_white.svg',
+			imgUrl: './img/wind_white.svg',
 			imgAlt: t('Img wind'),
 			name: t('Wind'),
 			info: Math.round(weatherInfo.wind.speed) + t('km/h'),
 		},
 		{
-			imgUrl: '/img/visibility.svg',
+			imgUrl: './img/visibility.svg',
 			imgAlt: t('Img visibility'),
 			name: t('Visibility'),
 			info: Math.round(weatherInfo.visibility) / 1000 + t('km'),
 		},
 		{
-			imgUrl: '/img/humidity_white.svg',
+			imgUrl: './img/humidity_white.svg',
 			imgAlt: t('Img humidity'),
 			name: t('Humidity'),
 			info: Math.round(weatherInfo.main.humidity),
 		},
 		{
-			imgUrl: '/img/pressure.svg',
+			imgUrl: './img/pressure.svg',
 			imgAlt: t('Img pressure'),
 			name: t('Pressure'),
 			info: Math.round(weatherInfo.main.pressure) + t('mb'),
 		},
 		{
-			imgUrl: '/img/sea_level.svg',
+			imgUrl: './img/sea_level.svg',
 			imgAlt: t('Img sea level'),
 			name: t('Sea level'),
 			info: Math.round(weatherInfo.main.sea_level),

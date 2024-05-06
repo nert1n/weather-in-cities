@@ -35,11 +35,11 @@ const Card = (props: ICard) => {
 			</div>
 			<div className={cl.card__info}>
 				<div className={cl.card__humidity}>
-					<img src="/img/humindity.svg" alt={t('Img humidity')} />
+					<img src="./img/humindity.svg" alt={t('Img humidity')} />
 					<p>{humidity}</p>
 				</div>
 				<div className={cl.card__wind}>
-					<img src="/img/wind.svg" alt={t('Img wind')} />
+					<img src="./img/wind.svg" alt={t('Img wind')} />
 					<p>
 						{windSpeed}
 						{t('km/h')}
