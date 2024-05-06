@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="Weather logo" width="300px" src="public/favicon.png">
+  <img alt="Weather logo" width="300px" src="./public/favicon.ico">
 </p>
 
 <h1 align="center">Weather in cities</h1>
