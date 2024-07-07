@@ -5,7 +5,6 @@ import { buildBabelLoader } from './babel/buildBabelLoader';
 
 export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
 	const isDev = options.mode === 'development';
-	const isProd = options.mode === 'production';
 
 	const assetLoader = {
 		test: /\.(png|jpg|jpeg|gif)$/i,
@@ -13,7 +12,7 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
 	};
 
 	const cssLoadersWithModule = {
-		loader: 'css-Loader',
+		loader: 'css-loader',
 	};
 
 	const svgrLoader = {
@@ -41,9 +40,9 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
 	const scssLoader = {
 		test: /\.s[ac]ss$/i,
 		use: [
-			isDev ? 'style-Loader' : MiniCssExtractPlugin.loader,
+			isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
 			cssLoadersWithModule,
-			'sass-Loader',
+			'sass-loader',
 		],
 	};
 

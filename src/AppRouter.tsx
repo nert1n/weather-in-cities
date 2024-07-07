@@ -8,8 +8,8 @@ import { useTranslation } from 'react-i18next';
 import { useEffect } from 'react';
 import MainService from '@/services/main.service';
 import { useQuery } from '@tanstack/react-query';
-import Error from '@/components/ui/Error';
-import Loader from '@/components/ui/Loader';
+import Error from '@/components/UI/Error';
+import Loader from '@/components/UI/Loader';
 
 function AppRouter() {
 	const { i18n } = useTranslation();

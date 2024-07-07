@@ -6,7 +6,7 @@ import cl from './MainPage.module.scss';
 import Card from '@/components/widgets/Card';
 import MainInfo from '@/components/widgets/MainInfo';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
-import Loader from '@/components/ui/Loader';
+import Loader from '@/components/UI/Loader';
 
 function MainPage() {
 	const { i18n } = useTranslation();

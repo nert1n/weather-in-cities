@@ -4,8 +4,8 @@ import { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { syncState } from '@/redux/slices/citySlice';
 import cl from './Header.module.scss';
-import SelectLang from '@/components/ui/SelectLang';
-import AuthButton from '@/components/ui/AuthButton';
+import SelectLang from '@/components/UI/selectLang';
+import AuthButton from '@/components/UI/AuthButton';
 
 const Header = () => {
 	const { t } = useTranslation();
